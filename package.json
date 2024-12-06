@@ -1,0 +1,55 @@
+{
+	"name": "@quikcess/bet-api-types",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Typings for Quik Bet API",
+	"exports": {
+		"./v*": {
+			"types": "./v*.d.ts",
+			"require": "./v*.js",
+			"import": "./v*.mjs"
+		},
+		"./utils": {
+			"types": "./utils.d.ts",
+			"require": "./utils.js",
+			"import": "./utils.mjs"
+		},
+		"./common/v*": {
+			"types": "./common/v*.d.ts",
+			"require": "./common/v*.js",
+			"import": "./common/v*.mjs"
+		},
+		"./payloads/v*": {
+			"types": "./payloads/v*/index.d.ts",
+			"require": "./payloads/v*/index.js",
+			"import": "./payloads/v*/index.mjs"
+		}
+	},
+	"scripts": {
+		"build": "run-s lint tsc",
+		"clean": "rimraf {common,payloads}/**/*.{*js,d.*ts,*map} {utils,v*}.{*js,d.*ts,*map}",
+		"lint": "biome check --fix .",
+		"tsc": "tsup",
+		"check-types": "tsc --noEmit",
+		"prepublishOnly": "run-s clean lint build",
+		"postpublish": "npm run clean",
+		"release": "npm run build && changeset publish"
+	},
+	"license": "MIT",
+	"files": [
+		"{common,payloads}/**/*.{js,js.map,d.ts,d.ts.map,mjs}",
+		"{utils,v*}.{js,js.map,d.ts,d.ts.map,mjs}"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@changesets/cli": "^2.27.10",
+		"@types/node": "^22.10.1",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "3.0.2",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"check-types": "^11.2.3"
+	}
+}
