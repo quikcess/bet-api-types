@@ -18,7 +18,7 @@ export type APIServicesStatus = "up" | "down";
 export const APIServicesStatus = {
 	UP: "up",
 	DOWN: "down",
-};
+} as const;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
