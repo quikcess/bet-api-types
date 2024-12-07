@@ -39,3 +39,7 @@ common/**/*.d.*ts
 payloads/**/*.*js
 payloads/**/*.map
 payloads/**/*.d.*ts
+
+rest/**/*.*js
+rest/**/*.map
+rest/**/*.d.*ts

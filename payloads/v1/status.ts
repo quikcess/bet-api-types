@@ -4,29 +4,44 @@ import type { APIPayload } from "../../common/v1";
  * APIStatus#status
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
-export enum APIStatus {
-  Healthy = "healthy",
-  Degraded = "degraded",
-}
+export type APIStatus = "online" | "degraded" | "unknown";
+export const APIStatus = {
+	Online: "online",
+	Degraded: "degraded",
+	Unknown: "unknown",
+};
 
-export enum ServiceStatus {
-  UP = "UP",
-  DOWN = "DOWN",
-}
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
+ */
+export type APIServicesStatus = "up" | "down";
+export const APIServicesStatus = {
+	UP: "up",
+	DOWN: "down",
+};
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
+ */
 export interface APIStatusServices {
-  database: ServiceStatus;
-  cache: ServiceStatus;
+	database: {
+		status: APIServicesStatus;
+		ping: number;
+	};
+	cache: {
+		status: APIServicesStatus;
+		ping: number;
+	};
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
 export interface APIStatusInfo {
-  status: APIStatus;
-  ping: string;
-  services: APIStatusServices;
-  uptime: number | null; // Pode ser null quando o servidor não reporta uptime.
+	status: APIStatus;
+	ping: number;
+	services: APIStatusServices;
+	uptime: number | null;
 }
 
 export type APIStatusPayload = APIPayload<APIStatusInfo>;
