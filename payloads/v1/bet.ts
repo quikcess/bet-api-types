@@ -35,8 +35,8 @@ export const APIBetPlatform = {
 
 export type APIBetFormat = "Normal" | "Tático" | string;
 export const APIBetFormat = {
-	Normal: "1v1",
-	Tático: "1v1",
+	Normal: "Normal",
+	Tático: "Tático",
 } as const;
 
 /**
@@ -68,6 +68,16 @@ export const APIBetMode = {
 	v5: "5v5",
 	v6: "6v6",
 } as const;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
+export interface APIBetLog {
+	createdUrl: string;
+	startedUrl: string;
+	victoryUrl: string;
+	closedUrl: string;
+}
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
@@ -142,6 +152,7 @@ export interface APIBetResult {
 	startedAt: Date;
 	closedAt: Date | null;
 	expireAt: Date;
+	logs: APIBetLog;
 }
 
 /**
