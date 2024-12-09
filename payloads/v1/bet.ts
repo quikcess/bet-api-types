@@ -43,15 +43,15 @@ export const APIBetFormat = {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export type APIBetStatus =
-	| "waiting"
+	| "pending"
 	| "started"
-	| "playing"
+	| "in_progress"
 	| "closed"
 	| "revenged";
 export const APIBetStatus = {
-	Waiting: "waiting",
+	Pending: "pending",
 	Started: "started",
-	Playing: "playing",
+	InProgress: "in_progress",
 	Closed: "closed",
 	Revenged: "revenged",
 } as const;
