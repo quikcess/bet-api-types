@@ -147,13 +147,18 @@ export interface APIBetResult {
 	revenge: boolean;
 	emulators: number;
 	gelType: APIBetGelType;
-	createdAt: Date;
-	updatedAt: Date;
-	startedAt: Date;
-	closedAt: Date | null;
-	expireAt: Date;
+	createdAt: string;
+	updatedAt: string;
+	startedAt: string;
+	closedAt: string | null;
+	expireAt: string;
 	logs: APIBetLog;
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
+export type APIBetResultPayload = APIPayload<APIBetResult>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
@@ -169,11 +174,6 @@ export interface APIAllBetsResult {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export type APIAllBetsResultPayload = APIPayload<APIAllBetsResult>;
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
-export type APIBetPayload = APIPayload<APIBetResult>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
