@@ -151,7 +151,6 @@ export interface APIBetResult {
 	updatedAt: string;
 	startedAt: string;
 	closedAt: string | null;
-	expireAt: string;
 	logs: APIBetLog;
 }
 

@@ -4,13 +4,13 @@ import type { APIPayload } from "../../common/v1";
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/credentials
  */
 export type APICredentialType =
-	| "admin"
+	| "unlimited"
 	| "bronze"
 	| "silver"
 	| "platinum"
 	| "diamond";
 export const APICredentialType = {
-	Admin: "admin",
+	Unlimited: "unlimited",
 	Bronze: "bronze",
 	Silver: "silver",
 	Platinum: "platinum",
@@ -21,12 +21,12 @@ export const APICredentialType = {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/credentials
  */
 export interface APICredentialInfo {
-	key: string;
-	email: string;
+	apiKey: string;
 	guildId: string;
+	userId: string;
 	type: APICredentialType;
-	createdAt: Date;
-	updatedAt: Date;
+	createdAt: string;
+	updatedAt: string;
 }
 
 export type APICredentialPayload = APIPayload<APICredentialInfo>;
