@@ -1,0 +1,1 @@
+# @quikcess/bet-api-types

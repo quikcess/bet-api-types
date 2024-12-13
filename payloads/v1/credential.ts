@@ -21,12 +21,12 @@ export const APICredentialType = {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/credentials
  */
 export interface APICredentialInfo {
-	apiKey: string;
-	guildId: string;
-	userId: string;
+	api_key: string;
+	guild_id: string;
+	user_id: string;
 	type: APICredentialType;
-	createdAt: string;
-	updatedAt: string;
+	created_at: string;
+	updated_at: string;
 }
 
 export type APICredentialPayload = APIPayload<APICredentialInfo>;

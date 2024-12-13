@@ -7,22 +7,22 @@ export interface RESTGetAPIBetsPaginationQuery {
 	page?: number;
 	limit?: number;
 	skip?: number;
-	dateStart?: Date;
-	dateEnd?: Date;
+	date_start?: Date;
+	date_end?: Date;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export type RESTGetAPIBetBaseQuery = {
-	guildId?: string;
+	guild_id?: string;
 };
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export interface RESTGetAPIAllBetsQuery extends RESTGetAPIBetsPaginationQuery {
-	guildId?: string;
+	guild_id?: string;
 }
 
 /**

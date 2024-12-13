@@ -73,17 +73,17 @@ export const APIBetMode = {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export interface APIBetLog {
-	createdUrl: string;
-	startedUrl: string;
-	victoryUrl: string;
-	closedUrl: string;
+	created_url: string;
+	started_url: string;
+	victory_url: string;
+	closed_url: string;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export interface APIBetPlayerDetails {
-	gelType: APIBetGelType;
+	gel_type: APIBetGelType;
 	emulators: number;
 }
 
@@ -91,7 +91,7 @@ export interface APIBetPlayerDetails {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export interface APIBetPlayerBase {
-	userId: string;
+	user_id: string;
 	wins: number;
 	loses: number;
 	consecutives: number;
@@ -130,27 +130,27 @@ export type APIBetPlayer =
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export interface APIBetResult {
-	guildId: string;
-	betId: string;
+	guild_id: string;
+	bet_id: string;
 	platform: APIBetPlatform;
 	format: APIBetFormat;
 	mode: APIBetMode;
 	players: APIBetPlayer[];
 	status: APIBetStatus;
 	type: APIBetType;
-	roomId: number;
+	room_id: number;
 	value: number | string;
-	queueChannelId: string;
-	channelId: string;
-	mediatorId: string;
+	queue_channel_id: string;
+	channel_id: string;
+	mediator_id: string;
 	wo: boolean;
 	revenge: boolean;
 	emulators: number;
-	gelType: APIBetGelType;
-	createdAt: string;
-	updatedAt: string;
-	startedAt: string;
-	closedAt: string | null;
+	gel_type: APIBetGelType;
+	created_at: string;
+	updated_at: string;
+	started_at: string;
+	closed_at: string | null;
 	logs: APIBetLog;
 }
 
@@ -164,9 +164,9 @@ export type APIBetResultPayload = APIPayload<APIBetResult>;
  */
 export interface APIAllBetsResult {
 	data: APIBetResult[];
-	currentPage: number;
-	totalPages: number;
-	totalBets: number;
+	current_page: number;
+	total_pages: number;
+	total_bets: number;
 }
 
 /**
