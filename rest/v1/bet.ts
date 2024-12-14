@@ -3,6 +3,13 @@ import type { APIBetResult } from "../../v1";
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
+export type RESTGetAPIBetBaseQuery = {
+	guild_id?: string;
+};
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
 export interface RESTGetAPIBetsPaginationQuery {
 	page?: number;
 	limit?: number;
@@ -10,13 +17,6 @@ export interface RESTGetAPIBetsPaginationQuery {
 	date_start?: Date;
 	date_end?: Date;
 }
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
-export type RESTGetAPIBetBaseQuery = {
-	guild_id?: string;
-};
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
