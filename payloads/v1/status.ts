@@ -4,8 +4,8 @@ import type { APIPayload } from "../../common/v1";
  * APIStatus#status
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
-export type APIStatus = "online" | "degraded" | "unknown";
-export const APIStatus = {
+export type APIStatusType = "online" | "degraded" | "unknown";
+export const APIStatusType = {
 	Online: "online",
 	Degraded: "degraded",
 	Unknown: "unknown",
@@ -14,8 +14,8 @@ export const APIStatus = {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
-export type APIServicesStatus = "up" | "down";
-export const APIServicesStatus = {
+export type APIServicesType = "up" | "down";
+export const APIServicesType = {
 	UP: "up",
 	DOWN: "down",
 } as const;
@@ -25,11 +25,11 @@ export const APIServicesStatus = {
  */
 export interface APIStatusServices {
 	database: {
-		status: APIServicesStatus;
+		status: APIServicesType;
 		ping: number;
 	};
 	cache: {
-		status: APIServicesStatus;
+		status: APIServicesType;
 		ping: number;
 	};
 }
@@ -37,11 +37,11 @@ export interface APIStatusServices {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
-export interface APIStatusInfo {
+export interface APIStatus {
 	status: APIStatus;
 	ping: number;
 	services: APIStatusServices;
 	uptime: number | null;
 }
 
-export type APIStatusPayload = APIPayload<APIStatusInfo>;
+export type APIStatusPayload = APIPayload<APIStatus>;
