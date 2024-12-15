@@ -1,4 +1,4 @@
-import type { APIBetResult } from "../../v1";
+import type { APIBet } from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
@@ -28,9 +28,9 @@ export interface RESTGetAPIAllBetsQuery extends RESTGetAPIBetsPaginationQuery {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type RESTGetAPIBetCreateBody = APIBetResult;
+export type RESTPostAPIBetCreateBody = APIBet;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type RESTGetAPIBetUpdateBody = Partial<APIBetResult>;
+export type RESTPostAPIBetUpdateBody = Partial<APIBet>;

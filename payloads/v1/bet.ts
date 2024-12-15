@@ -129,7 +129,7 @@ export type APIBetPlayer =
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export interface APIBetResult {
+export interface APIBet {
 	guild_id: string;
 	bet_id: string;
 	platform: APIBetPlatform;
@@ -157,13 +157,13 @@ export interface APIBetResult {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type APIBetResultPayload = APIPayload<APIBetResult>;
+export type APIBetPayload = APIPayload<APIBet>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export interface APIAllBetsResult {
-	data: APIBetResult[];
+export interface APIAllBets {
+	data: APIBet[];
 	current_page: number;
 	total_pages: number;
 	total_bets: number;
@@ -172,12 +172,12 @@ export interface APIAllBetsResult {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type APIAllBetsResultPayload = APIPayload<APIAllBetsResult>;
+export type APIAllBetsPayload = APIPayload<APIAllBets>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export interface APIBetAggregateMetricsResult {
+export interface APIBetAggregateMetrics {
 	total: number;
 	openeds: number;
 	closeds: number;
