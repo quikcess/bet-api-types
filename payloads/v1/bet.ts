@@ -1,4 +1,4 @@
-import type { APIPayload } from "../../common/v1";
+import type { APIPayload, ISODateString } from "../../common/v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
@@ -147,10 +147,10 @@ export interface APIBet {
 	revenge: boolean;
 	emulators: number;
 	gel_type: APIBetGelType;
-	created_at: string;
-	updated_at: string;
-	started_at: string;
-	closed_at: string | null;
+	created_at: ISODateString;
+	updated_at: ISODateString;
+	started_at: ISODateString;
+	closed_at: ISODateString | null;
 	logs: APIBetLog;
 }
 

@@ -1,4 +1,4 @@
-import type { APIBet } from "../../v1";
+import type { APIBet, ISODateString } from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
@@ -14,8 +14,8 @@ export interface RESTGetAPIBetsPaginationQuery {
 	page?: number;
 	limit?: number;
 	skip?: number;
-	date_start?: Date;
-	date_end?: Date;
+	date_start?: ISODateString;
+	date_end?: ISODateString;
 }
 
 /**

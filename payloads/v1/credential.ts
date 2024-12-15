@@ -1,4 +1,4 @@
-import type { APIPayload } from "../../common/v1";
+import type { APIPayload, ISODateString } from "../../common/v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/credentials
@@ -25,8 +25,8 @@ export interface APICredential {
 	guild_id: string;
 	user_id: string;
 	type: APICredentialType;
-	created_at: string;
-	updated_at: string;
+	created_at: ISODateString;
+	updated_at: ISODateString;
 }
 
 export type APICredentialPayload = APIPayload<APICredential>;
