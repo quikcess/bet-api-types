@@ -1,4 +1,4 @@
-import type { APIPayload, ISODateString } from "../../common/v1";
+import type { ISODateString } from "../../common/v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
@@ -157,22 +157,12 @@ export interface APIBet {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type APIBetPayload = APIPayload<APIBet>;
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
 export interface APIAllBets {
 	data: APIBet[];
 	current_page: number;
 	total_pages: number;
 	total_bets: number;
 }
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
-export type APIAllBetsPayload = APIPayload<APIAllBets>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet

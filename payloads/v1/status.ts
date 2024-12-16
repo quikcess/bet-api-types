@@ -1,4 +1,3 @@
-import type { APIPayload } from "../../common/v1";
 
 /**
  * APIStatus#status
@@ -43,5 +42,3 @@ export interface APIStatus {
 	services: APIStatusServices;
 	uptime: number | null;
 }
-
-export type APIStatusPayload = APIPayload<APIStatus>;
