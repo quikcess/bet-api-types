@@ -14,9 +14,9 @@ export interface RESTPostAPICredentialJSONBody {
  */
 export interface RESTGetAPICredentialBaseQuery {
 	guild_id?: string;
-};
+}
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/credential
  */
-export type RESTCredentialResponse = APIPayload<APICredential>;
+export type RESTGetAPICredentialResponse = APIPayload<APICredential>;

@@ -1,4 +1,10 @@
-import type { APIAllBets, APIBet, APIBetAggregateMetrics, APIPayload, ISODateString } from "../../v1";
+import type {
+  APIAllBets,
+  APIBet,
+  APIBetAggregateMetrics,
+  APIPayload,
+  ISODateString,
+} from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
@@ -33,19 +39,19 @@ export type RESTPostAPIBetCreateBody = APIBet;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type RESTPostAPIBetUpdateBody = Partial<APIBet>;
+export type RESTPatchAPIBetUpdateBody = Partial<APIBet>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type RESTBetResponse = APIPayload<APIBet>;
+export type RESTGetAPIBetResponse = APIPayload<APIBet>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type RESTGetAllBetsResponse = APIPayload<APIAllBets>
+export type RESTGetAPIAllBetsResponse = APIPayload<APIAllBets>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export type RESTGetBetAggregateMetrics = APIPayload<APIBetAggregateMetrics>;
+export type RESTGetAPIBetAggregateMetrics = APIPayload<APIBetAggregateMetrics>;

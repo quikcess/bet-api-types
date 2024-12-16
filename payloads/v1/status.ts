@@ -1,4 +1,3 @@
-
 /**
  * APIStatus#status
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
@@ -37,7 +36,7 @@ export interface APIStatusServices {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
 export interface APIStatus {
-	status: APIStatus;
+	status: APIStatusType;
 	ping: number;
 	services: APIStatusServices;
 	uptime: number | null;

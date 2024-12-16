@@ -28,4 +28,3 @@ export interface APICredential {
 	created_at: ISODateString;
 	updated_at: ISODateString;
 }
-
