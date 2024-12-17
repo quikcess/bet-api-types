@@ -82,49 +82,12 @@ export interface APIBetLog {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
-export interface APIBetPlayerDetails {
-	gel_type: APIBetGelType;
-	emulators: number;
-}
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
-export interface APIBetPlayerBase {
+export interface APIBetPlayer {
 	user_id: string;
 	wins: number;
 	loses: number;
 	consecutives: number;
 }
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
-export interface APIBetRegenerativePlayer extends APIBetPlayerBase {
-	details: APIBetPlayerDetails;
-}
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
-export interface APIBetCustomizedPlayer extends APIBetPlayerBase {
-	details: APIBetPlayerDetails & { platform: APIBetPlatform };
-}
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
-export interface APIBetSpecializedPlayer extends APIBetPlayerBase {
-	details: APIBetPlayerDetails & { value: number | string };
-}
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
- */
-export type APIBetPlayer =
-	| APIBetRegenerativePlayer
-	| APIBetCustomizedPlayer
-	| APIBetSpecializedPlayer;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
