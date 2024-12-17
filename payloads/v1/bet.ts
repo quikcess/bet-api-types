@@ -110,6 +110,7 @@ export interface APIBet {
 	revenge: boolean;
 	emulators: number;
 	gel_type: APIBetGelType;
+	gel_count: number;
 	created_at: ISODateString;
 	updated_at: ISODateString;
 	started_at: ISODateString;
