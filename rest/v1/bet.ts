@@ -1,9 +1,9 @@
 import type {
-  APIAllBets,
-  APIBet,
-  APIBetAggregateMetrics,
-  APIPayload,
-  ISODateString,
+	APIAllBets,
+	APIBet,
+	APIBetAggregateMetrics,
+	APIPayload,
+	ISODateString,
 } from "../../v1";
 
 /**
