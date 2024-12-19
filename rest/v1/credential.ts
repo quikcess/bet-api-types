@@ -1,4 +1,4 @@
-import type { APICredential, APICredentialType, APIPayload } from "../../v1";
+import type { APICredential, APIPayload, CredentialType } from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/credential
@@ -6,7 +6,7 @@ import type { APICredential, APICredentialType, APIPayload } from "../../v1";
 export interface RESTPostAPICredentialJSONBody {
 	guild_id: string;
 	user_id: string;
-	type: APICredentialType;
+	type: CredentialType;
 }
 
 /**
