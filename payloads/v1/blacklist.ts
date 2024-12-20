@@ -6,12 +6,23 @@ export enum BlacklistTargetType {
 }
 
 /**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
+ */
+export enum BlacklistStatus {
+	Pending = 1,
+	Investigating = 2,
+	Validated = 3,
+	Dismissed = 4,
+}
+
+/**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
 export interface APIBlacklist {
 	guild_id: string;
 	target_id: string;
 	target_type: BlacklistTargetType;
+	status: BlacklistStatus;
 	added_by: string;
 	reason: string;
 	created_at: ISODateString;

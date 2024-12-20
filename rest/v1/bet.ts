@@ -49,6 +49,11 @@ export type RESTGetAPIBetResponse = APIPayload<APIBet>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
+export type RESTGetAPIBetHasResponse = APIPayload<boolean>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
 export type RESTGetAPIBetBulkResponse = APIPayload<APIBet[]>;
 
 /**
