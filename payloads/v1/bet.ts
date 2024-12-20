@@ -1,4 +1,4 @@
-import type { ISODateString } from "../../common/v1";
+import type { ISODateString } from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
