@@ -40,8 +40,8 @@ export interface APIScam {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
  */
 export interface APIAllScam {
-  data: APIScam[];
-  current_page: number;
-  total_pages: number;
-  total_entries: number;
+	data: APIScam[];
+	current_page: number;
+	total_pages: number;
+	total_entries: number;
 }
