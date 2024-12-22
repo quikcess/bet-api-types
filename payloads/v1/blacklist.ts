@@ -3,6 +3,7 @@ import type { ISODateString } from "../../v1";
 export enum BlacklistTargetType {
 	Discord = 1,
 	FreeFire = 2,
+	IMEI = 3,
 }
 
 /**
