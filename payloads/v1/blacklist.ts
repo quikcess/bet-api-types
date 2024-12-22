@@ -36,5 +36,5 @@ export interface APIAllBlacklist {
 	data: APIBlacklist[];
 	current_page: number;
 	total_pages: number;
-	total_bets: number;
+	total_entries: number;
 }

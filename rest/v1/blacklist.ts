@@ -6,14 +6,14 @@ import type {
 } from "../../v1";
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
 export type RESTGetAPIBlacklistBaseQuery = {
 	guild_id?: string;
 };
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
 export interface RESTGetAPIBlacklistPaginationQuery {
 	page?: number;
@@ -24,7 +24,7 @@ export interface RESTGetAPIBlacklistPaginationQuery {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
 export interface RESTGetAPIAllBlacklistQuery
 	extends RESTGetAPIBlacklistPaginationQuery {
@@ -32,9 +32,14 @@ export interface RESTGetAPIAllBlacklistQuery
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
 export type RESTPostAPIBlacklistCreateBody = APIBlacklist;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
+ */
+export type RESTPatchAPIBlacklistUpdateBody = Partial<APIBlacklist>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
