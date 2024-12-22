@@ -35,3 +35,13 @@ export interface APIScam {
 	validated_at?: ISODateString;
 	validated_by?: string;
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
+ */
+export interface APIAllScam {
+  data: APIScam[];
+  current_page: number;
+  total_pages: number;
+  total_entries: number;
+}
