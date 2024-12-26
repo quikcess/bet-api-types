@@ -21,14 +21,14 @@ Using these type definitions is simple. You just need to specify the appropriate
 
 ```ts
 // Importing the API definitions for version 1
-import { Bet, BetStatus } from 'bet-api-types/v1';
+import { APIBet, BetStatus } from 'bet-api-types/v1';
 ```
 
 You can also import only the specific parts of the module that you need. Here are some examples:
 
 ```ts
-// Importing specific types for bets and players in version 1
-import { Bet, Player } from 'bet-api-types/v1';
+// Importing specific types for bets and scams in version 1
+import { APIBet, APIScam } from 'bet-api-types/v1';
 ```
 
 > _**Note:** The `v*` exports (`bet-api-types/v*`) include the relevant version of types for `bet`, `blacklist`, `scam`, `credential`, and `status`, along with utilities and helpers._
