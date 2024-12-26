@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"private": false,
 	"description": "Typings for Quikcess Bet API",
+	"homepage": "https://github.com/quikcess/bet-api-types#readme",
 	"exports": {
 		"./v*": {
 			"types": "./v*.d.ts",
@@ -45,6 +46,15 @@
 		"{common,payloads,rest}/**/*.{js,js.map,d.ts,d.ts.map,mjs}",
 		"{utils,v*}.{js,js.map,d.ts,d.ts.map,mjs}"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/quikcess/bet-api-types.git"
+	},
+	"keywords": ["quikcess", "api", "bet", "bet api", "types"],
+	"author": "Eydrenn Araujo",
+	"bugs": {
+		"url": "https://github.com/quikcess/bet-api-types/issues"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@changesets/cli": "^2.27.10",
