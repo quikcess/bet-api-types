@@ -2,7 +2,7 @@
 
 Simple type definitions for the **Quikcess Bet API**.
 
-[![GitHub](https://img.shields.io/github/license/discordjs/discord-api-types)](https://github.com/discordjs/discord-api-types/blob/main/LICENSE.md)
+[![GitHub](https://img.shields.io/github/license/quikcess/bet-api-types)](https://github.com/quikcess/bet-api-types/blob/main/LICENSE)
 [![npm](https://img.shields.io/npm/v/bet-api-types?color=crimson&logo=npm)](https://www.npmjs.com/package/@quikcess/bet-api-types)
 
 ## Installation
