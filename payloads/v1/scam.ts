@@ -23,15 +23,15 @@ export enum ScamStatus {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
  */
 export interface APIScam {
-	target_name: string;
 	guild_id: string;
+	target_name: string;
 	type: ScamType;
 	status: ScamStatus;
 	details: string;
 	reported_by: string;
+	evidences: string[];
 	created_at: ISODateString;
 	updated_at: ISODateString;
-	evidences: string[];
 	validated_at?: ISODateString;
 	validated_by?: string;
 }
@@ -39,7 +39,7 @@ export interface APIScam {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
  */
-export interface APIAllScam {
+export interface APIAllScams {
 	data: APIScam[];
 	current_page: number;
 	total_pages: number;
