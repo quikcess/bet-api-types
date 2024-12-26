@@ -33,26 +33,6 @@ import { APIBet, APIScam } from 'bet-api-types/v1';
 
 > _**Note:** The `v*` exports (`bet-api-types/v*`) include the relevant version of types for `bet`, `blacklist`, `scam`, `credential`, and `status`, along with utilities and helpers._
 
-Here's the updated README for `bet-api-types` with the **Project Structure** section in English, explaining the REST and API distinction:
-
-## Getting Started
-
-Using these type definitions is simple. You just need to specify the appropriate version of the API by appending `/v*` to the import path, where `*` represents your desired API version. Here are some usage examples:
-
-```ts
-// Importing the API definitions for version 1
-import { Bet, BetStatus } from 'bet-api-types/v1';
-```
-
-You can also import only the specific parts of the module that you need. Here are some examples:
-
-```ts
-// Importing specific types for bets and players in version 1
-import { Bet, Player } from 'bet-api-types/v1';
-```
-
-> _**Note:** The `v*` exports (`bet-api-types/v*`) include the relevant version of types for `bets`, `players`, and `statuses`, along with utilities and helpers._
-
 ## Project Structure
 
 he exported types for each API version are organized into two main categories:
