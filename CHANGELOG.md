@@ -1,5 +1,11 @@
 # @quikcess/bet-api-types
 
+## 0.0.6
+
+### Patch Changes
+
+- 09e9365: APIBetFormat added
+
 ## 0.0.5
 
 ### Patch Changes
