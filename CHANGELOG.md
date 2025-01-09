@@ -1,5 +1,23 @@
 # @quikcess/bet-api-types
 
+## 0.0.5
+
+### Patch Changes
+
+- 6021659: API and Rest Channel Ids from Player Ids
+
+## 0.0.4
+
+### Patch Changes
+
+- e44bc69: Fix Rest all bets
+
+## 0.0.3
+
+### Patch Changes
+
+- e44bc69: Updates in Rest bets
+
 ## 0.0.2
 
 ### Patch Changes
