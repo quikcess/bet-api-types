@@ -73,11 +73,16 @@ export interface APIBetPlayer {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
+export type APIBetFormat = string;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
 export interface APIBet {
 	guild_id: string;
 	bet_id: string;
 	platform: BetPlatform;
-	format: string;
+	format: APIBetFormat;
 	mode: BetMode;
 	players: APIBetPlayer[];
 	status: BetStatus;
