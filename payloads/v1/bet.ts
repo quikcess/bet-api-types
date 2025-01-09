@@ -119,3 +119,8 @@ export interface APIBetAggregateMetrics {
 	pending: number;
 	in_progress: number;
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
+export type APIChannelIdsFromPlayerId = Record<string, string[]>;

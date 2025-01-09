@@ -2,6 +2,7 @@ import type {
 	APIAllBets,
 	APIBet,
 	APIBetAggregateMetrics,
+	APIChannelIdsFromPlayerId,
 	APIPayload,
 	ISODateString,
 } from "../../v1";
@@ -28,6 +29,14 @@ export interface RESTGetAPIBetsPaginationQuery {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export interface RESTGetAPIAllBetsQuery extends RESTGetAPIBetsPaginationQuery {
+	guild_id?: string;
+	player_ids?: string[];
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
+export interface RESTGetAPIAPIChannelIdsFromPlayerIdQuery {
 	guild_id?: string;
 	player_ids?: string[];
 }
@@ -66,3 +75,9 @@ export type RESTGetAPIAllBetsResponse = APIPayload<APIAllBets>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
  */
 export type RESTGetAPIBetAggregateMetrics = APIPayload<APIBetAggregateMetrics>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
+export type RESTGetAPIChannelIdsFromPlayerId =
+	APIPayload<APIChannelIdsFromPlayerId>;
