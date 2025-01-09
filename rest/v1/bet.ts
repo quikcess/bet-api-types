@@ -29,6 +29,7 @@ export interface RESTGetAPIBetsPaginationQuery {
  */
 export interface RESTGetAPIAllBetsQuery extends RESTGetAPIBetsPaginationQuery {
 	guild_id?: string;
+	player_ids?: string[];
 }
 
 /**
