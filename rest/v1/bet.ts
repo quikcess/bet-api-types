@@ -1,10 +1,10 @@
 import type {
-	APIAllBets,
-	APIBet,
-	APIBetAggregateMetrics,
-	APIChannelIdsFromPlayerId,
-	APIPayload,
-	ISODateString,
+  APIAllBets,
+  APIBet,
+  APIBetAggregateMetrics,
+  APIChannelIdsFromPlayerId,
+  APIPayload,
+  ISODateString,
 } from "../../v1";
 
 /**
@@ -81,3 +81,8 @@ export type RESTGetAPIBetAggregateMetrics = APIPayload<APIBetAggregateMetrics>;
  */
 export type RESTGetAPIChannelIdsFromPlayerId =
 	APIPayload<APIChannelIdsFromPlayerId>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ */
+export type RESTGetAPIBetThreadWaitTimeResponse = APIPayload<number>;
