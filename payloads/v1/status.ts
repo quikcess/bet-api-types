@@ -2,9 +2,9 @@
  * APIStatus#status
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
-export type APIStatusType = "online" | "degraded" | "unknown";
+export type APIStatusType = "healthy" | "degraded" | "unknown";
 export const APIStatusType = {
-	Online: "online",
+	Healthy: "healthy",
 	Degraded: "degraded",
 	Unknown: "unknown",
 };
@@ -12,10 +12,11 @@ export const APIStatusType = {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
-export type APIServicesType = "up" | "down";
+export type APIServicesType = "up" | "down" | "unknown";
 export const APIServicesType = {
 	UP: "up",
 	DOWN: "down",
+	Unknown: "unknown",
 } as const;
 
 /**
