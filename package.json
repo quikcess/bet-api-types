@@ -1,6 +1,6 @@
 {
 	"name": "@quikcess/bet-api-types",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"private": false,
 	"description": "Typings for Quikcess Bet API",
 	"homepage": "https://github.com/quikcess/bet-api-types#readme",

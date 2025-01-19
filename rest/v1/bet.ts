@@ -1,10 +1,10 @@
 import type {
-  APIAllBets,
-  APIBet,
-  APIBetAggregateMetrics,
-  APIChannelIdsFromPlayerId,
-  APIPayload,
-  ISODateString,
+	APIAllBets,
+	APIBet,
+	APIBetAggregateMetrics,
+	APIChannelIdsFromPlayerId,
+	APIPayload,
+	ISODateString,
 } from "../../v1";
 
 /**
