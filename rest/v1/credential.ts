@@ -1,7 +1,7 @@
 import type { APICredential, APIPayload, CredentialType } from "../../v1";
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/credential
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/credentials
  */
 export interface RESTPostAPICredentialJSONBody {
 	guild_id: string;
@@ -10,13 +10,13 @@ export interface RESTPostAPICredentialJSONBody {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/credential
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/credentials
  */
 export interface RESTGetAPICredentialBaseQuery {
 	guild_id?: string;
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/credential
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/credentials
  */
 export type RESTGetAPICredentialResponse = APIPayload<APICredential>;

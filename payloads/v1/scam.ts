@@ -1,7 +1,7 @@
 import type { ISODateString } from "../../v1";
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
 export enum ScamType {
 	Refund = 1,
@@ -10,7 +10,7 @@ export enum ScamType {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
 export enum ScamStatus {
 	Pending = 1,
@@ -20,7 +20,7 @@ export enum ScamStatus {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
 export interface APIScam {
 	guild_id: string;
@@ -37,7 +37,7 @@ export interface APIScam {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
 export interface APIAllScams {
 	data: APIScam[];

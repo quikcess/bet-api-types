@@ -1,7 +1,7 @@
 import type { ISODateString } from "../../v1";
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export enum BetType {
 	Regenerative = 1,
@@ -10,7 +10,7 @@ export enum BetType {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export enum BetGelType {
 	Normal = 1,
@@ -18,7 +18,7 @@ export enum BetGelType {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export enum BetPlatform {
 	Mobile = 1,
@@ -27,7 +27,7 @@ export enum BetPlatform {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export enum BetStatus {
 	Pending = 1,
@@ -38,7 +38,7 @@ export enum BetStatus {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export type BetMode = "1x1" | "2x2" | "3x3" | "4x4" | "5x5" | "6x6";
 export const BetMode = {
@@ -51,7 +51,7 @@ export const BetMode = {
 } as const;
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIBetLog {
 	created_url: string;
@@ -61,7 +61,7 @@ export interface APIBetLog {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIBetPlayer {
 	user_id: string;
@@ -71,12 +71,12 @@ export interface APIBetPlayer {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export type APIBetFormat = string;
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIBet {
 	guild_id: string;
@@ -105,7 +105,7 @@ export interface APIBet {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIAllBets {
 	data: APIBet[];
@@ -115,7 +115,7 @@ export interface APIAllBets {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIBetAggregateMetrics {
 	total: number;
@@ -126,6 +126,6 @@ export interface APIBetAggregateMetrics {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bet
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export type APIChannelIdsFromPlayerId = Record<string, string[]>;

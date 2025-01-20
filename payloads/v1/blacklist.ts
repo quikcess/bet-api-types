@@ -1,5 +1,8 @@
 import type { ISODateString } from "../../v1";
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scam
+ */
 export enum BlacklistTargetType {
 	Discord = 1,
 	FreeFire = 2,

@@ -1,5 +1,4 @@
 /**
- * APIStatus#status
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
  */
 export type APIStatusType = "healthy" | "degraded" | "unknown";
