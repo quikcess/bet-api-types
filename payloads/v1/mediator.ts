@@ -12,8 +12,8 @@ export interface APIMediatorLimiter {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIMediatorSignature {
-	role_id: string;
-	expiration_time: number;
+	role_id: string | null;
+	expiration_time: number | null;
 	autorole: boolean;
 }
 
@@ -32,7 +32,7 @@ export interface APIMediatorPix {
 export interface APIMediator {
 	user_id: string;
 	guild_id: string;
-	category_id: string;
+	category_id: string | null;
 	pix: APIMediatorPix;
 	virtual_accounts: number;
 	uptime: number;

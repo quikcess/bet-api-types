@@ -54,10 +54,10 @@ export const BetMode = {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIBetLog {
-	created_url: string;
-	started_url: string;
-	victory_url: string;
-	closed_url: string;
+	created_url: string | null;
+	started_url: string | null;
+	victory_url: string | null;
+	closed_url: string | null;
 }
 
 /**

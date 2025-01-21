@@ -51,7 +51,7 @@ export interface APIGuildQueueRules {
  */
 export interface APIGuildChannels {
 	parent_thread_ids: string[];
-	blacklist_id: string;
+	blacklist_id: string | null;
 	command_ids: string[];
 	queue_rules: APIGuildQueueRules[];
 }
@@ -60,8 +60,8 @@ export interface APIGuildChannels {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuildPermission {
-	id: number;
-	role_ids: number;
+	id: string;
+	role_ids: string[];
 }
 
 /**
