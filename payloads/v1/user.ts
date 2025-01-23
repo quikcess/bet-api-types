@@ -35,3 +35,13 @@ export interface APIUser {
 	created_at: ISODateString;
 	updated_at: ISODateString;
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
+export interface APIAllUsers {
+  data: APIUser[];
+  current_page: number;
+  total_pages: number;
+  total_bets: number;
+}

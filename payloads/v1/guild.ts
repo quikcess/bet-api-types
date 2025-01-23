@@ -76,3 +76,13 @@ export interface APIGuild {
 	created_at: ISODateString;
 	updated_at: ISODateString;
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
+ */
+export interface APIAllGuilds {
+  data: APIGuild[];
+  current_page: number;
+  total_pages: number;
+  total_bets: number;
+}

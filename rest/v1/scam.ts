@@ -43,11 +43,6 @@ export type RESTGetAPIScamResponse = APIPayload<APIScam>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
-export type RESTGetAPIScamHasResponse = APIPayload<boolean>;
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
- */
 export type RESTGetAPISimilarScamsResponse = APIPayload<APIScam[]>;
 
 /**

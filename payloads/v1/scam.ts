@@ -32,8 +32,8 @@ export interface APIScam {
 	evidences: string[];
 	created_at: ISODateString;
 	updated_at: ISODateString;
-	validated_at?: ISODateString;
-	validated_by?: string;
+	validated_at: ISODateString | null;
+	validated_by: string | null;
 }
 
 /**

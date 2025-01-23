@@ -49,9 +49,4 @@ export type RESTGetAPIBlacklistResponse = APIPayload<APIBlacklist>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
-export type RESTGetAPIBlacklistHasResponse = APIPayload<boolean>;
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
- */
 export type RESTGetAPIAllBlacklistResponse = APIPayload<APIAllBlacklist>;
