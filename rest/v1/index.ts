@@ -1,3 +1,4 @@
+export * from "./auto_message";
 export * from "./bet";
 export * from "./blacklist";
 export * from "./credential";
