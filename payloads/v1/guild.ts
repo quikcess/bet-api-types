@@ -1,32 +1,32 @@
-import type { ISODateString } from "../../v1";
+import type { APIBetMetrics, ISODateString } from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuildLogsBets {
-	created: string;
-	cancelled: string;
-	started: string;
-	closed: string;
-	victory_defined: string;
-	updated: string;
+	created: string | null;
+	cancelled: string | null;
+	started: string | null;
+	closed: string | null;
+	victory_defined: string | null;
+	updated: string | null;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuildLogsManagements {
-	wins: string;
-	loses: string;
-	credits: string;
+	wins: string | null;
+	loses: string | null;
+	credits: string | null;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuildLogsSystems {
-	alerts: string;
-	reports: string;
+	alerts: string | null;
+	reports: string | null;
 }
 
 /**
@@ -81,8 +81,23 @@ export interface APIGuild {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIAllGuilds {
-  data: APIGuild[];
-  current_page: number;
-  total_pages: number;
-  total_bets: number;
+	data: APIGuild[];
+	current_page: number;
+	total_pages: number;
+	total_guilds: number;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
+ */
+export interface APIGuildStats {
+	analytics: {
+		total_guilds: number;
+		total_users: number;
+		total_bets: number;
+		total_mediators: number;
+		total_blacklist: number;
+		total_scams: number;
+	};
+	bets: APIBetMetrics;
 }

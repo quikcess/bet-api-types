@@ -47,8 +47,8 @@ export interface APIMediator {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIAllMediators {
-  data: APIMediator[];
-  current_page: number;
-  total_pages: number;
-  total_bets: number;
+	data: APIMediator[];
+	current_page: number;
+	total_pages: number;
+	total_bets: number;
 }

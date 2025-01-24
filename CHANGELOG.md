@@ -1,5 +1,17 @@
 # @quikcess/bet-api-types
 
+## 0.0.8
+
+### Patch Changes
+
+- X: Y
+
+## 0.0.7
+
+### Patch Changes
+
+- X: Y
+
 ## 0.0.6
 
 ### Patch Changes

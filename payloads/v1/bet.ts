@@ -88,6 +88,7 @@ export interface APIBet {
 	status: BetStatus;
 	type: BetType;
 	room_id: number;
+	room_price: number;
 	value: number | string;
 	queue_channel_id: string;
 	channel_id: string;
@@ -114,15 +115,28 @@ export interface APIAllBets {
 	total_bets: number;
 }
 
+export interface APIBetBilled {
+	total: number; // Total invoiced (fee + room sales)
+	fee_only: number; // Total billed without rooms, only with the imposed fee
+	rooms: {
+		sold: number; // Total number of rooms sold
+		invoicing: number; // Total amount billed for rooms only based on room_price
+		investment: number; // Total amount paid to have the rooms based on room_price
+	};
+}
+
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APIBetAggregateMetrics {
+export interface APIBetMetrics {
 	total: number;
 	opened: number;
 	closed: number;
 	pending: number;
 	in_progress: number;
+	billed: APIBetBilled;
+	successful: number; // Confirmed plus victory
+	failed: number; // Confirmed without victory
 }
 
 /**
