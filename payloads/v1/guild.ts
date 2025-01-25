@@ -1,4 +1,11 @@
-import type { APIBetMetrics, ISODateString } from "../../v1";
+import type {
+	APIBetStats,
+	APIBlacklistStats,
+	APIMediatorStats,
+	APIScamStats,
+	APIUserStats,
+	ISODateString,
+} from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
@@ -91,13 +98,9 @@ export interface APIAllGuilds {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuildStats {
-	analytics: {
-		total_guilds: number;
-		total_users: number;
-		total_bets: number;
-		total_mediators: number;
-		total_blacklist: number;
-		total_scams: number;
-	};
-	bets: APIBetMetrics;
+	bets: APIBetStats;
+	users: APIUserStats;
+	mediators: APIMediatorStats;
+	scams: APIScamStats;
+	blacklist: APIBlacklistStats;
 }

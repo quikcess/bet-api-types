@@ -20,19 +20,38 @@ export interface APIUserScores {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIUserNotifications {
-	events: number;
-	waiting_bets: number;
+	events: boolean;
+	waiting_bets: boolean;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
+export interface APIUserBilledRooms {
+	purchased: number; // Total number of split rooms (tot room: $1.8, split: $0.90)
+	investment: number; // Total amount paid to have the rooms based on room_price
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIUserBilled {
-	total: number; // Total invoiced (fee + room sales)
-	rooms: {
-		purchased: number; // Total number of split rooms (tot room: $1.8, split: $0.90)
-		investment: number; // Total amount paid to have the rooms based on room_price
-	};
+	total: number; // Total invoiced (fee only)
+	rooms: APIUserBilledRooms;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
+export interface APIUserStats {
+	confirmed_bets: number;
+	abandoned_bet: number; // Confirmed the bet and disappeared
+	cancelled_bets: number;
+	played_bets: number;
+	won_bets: number;
+	lost_bets: number;
+	walkover_bets: number; // W.O
+	billed: APIUserBilled;
 }
 
 /**
@@ -41,11 +60,10 @@ export interface APIUserBilled {
 export interface APIUser {
 	user_id: string;
 	guild_id: string;
-	bets_placed: number; // Number of bets confirmed and played by the user
-	bets_won: number; // Number of bets won by the user
-	billed: APIUserBilled;
 	wallet: APIUserWallet;
+	stats: APIUserStats; // All the time
 	scores: APIUserScores;
+	notifications: APIUserNotifications;
 	created_at: ISODateString;
 	updated_at: ISODateString;
 }
@@ -58,19 +76,4 @@ export interface APIAllUsers {
 	current_page: number;
 	total_pages: number;
 	total_users: number;
-}
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
- */
-export interface APIUserStats {
-	analytics: {
-		total_guilds: number;
-		total_users: number;
-		total_bets: number;
-		total_mediators: number;
-		total_blacklist: number;
-		total_scams: number;
-	};
-	billed: APIUserBilled;
 }

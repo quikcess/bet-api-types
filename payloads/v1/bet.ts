@@ -118,28 +118,37 @@ export interface APIAllBets {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APIBetBilled {
-	total: number; // Total invoiced (fee + room sales)
-	fee_only: number; // Total billed without rooms, only with the imposed fee
-	rooms: {
-		sold: number; // Total number of rooms sold
-		invoicing: number; // Total amount billed for rooms only based on room_price
-		investment: number; // Total amount paid to have the rooms based on room_price
-	};
+export interface APIBetBilledRooms {
+	sold: number; // Total number of rooms sold
+	invoicing: number; // Total amount billed for rooms only based on room_price (bet schema)
+	investment: number; // Total amount paid to have the rooms based on room_price (bet schema)
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APIBetMetrics {
+export interface APIBetBilled {
+	total: number; // Total invoiced (fee + room sales)
+	fee_only: number; // Total billed without rooms, only with the imposed fee
+	rooms: APIBetBilledRooms;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
+ */
+export interface APIBetStats {
 	total: number;
 	opened: number;
 	closed: number;
 	pending: number;
 	in_progress: number;
+	confirmed_bets: number;
+	cancelled_bets: number;
+	abandoned_bet: number; // Confirmed the bet and disappeared
+	played_bets: number;
+	winner_bets: number; // Bets with any winner
+	walkover_bets: number; // W.O
 	billed: APIBetBilled;
-	successful: number; // Confirmed plus victory
-	failed: number; // Confirmed without victory
 }
 
 /**

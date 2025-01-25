@@ -45,3 +45,18 @@ export interface APIAllScams {
 	total_pages: number;
 	total_entries: number;
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
+ */
+export interface APIScamStats {
+	total: number;
+	pending: number;
+	investigating: number;
+	validated: number;
+	dismissed: number;
+	refund: number;
+	stealing: number;
+	cheating: number;
+	recently_added: number; // In the last 24 hours
+}
