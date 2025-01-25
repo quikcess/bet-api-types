@@ -36,4 +36,9 @@ export type RESTGetAPIUserResponse = APIPayload<APIUser>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
+export type RESTGetAPIUsersResponse = APIPayload<APIUser[]>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
 export type RESTGetAPIAllUsersResponse = APIPayload<APIAllUsers>;

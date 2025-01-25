@@ -115,6 +115,9 @@ export interface APIAllBets {
 	total_bets: number;
 }
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
+ */
 export interface APIBetBilled {
 	total: number; // Total invoiced (fee + room sales)
 	fee_only: number; // Total billed without rooms, only with the imposed fee

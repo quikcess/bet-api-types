@@ -50,13 +50,7 @@
 		"type": "git",
 		"url": "git+https://github.com/quikcess/bet-api-types.git"
 	},
-	"keywords": [
-		"quikcess",
-		"api",
-		"bet",
-		"bet api",
-		"types"
-	],
+	"keywords": ["quikcess", "api", "bet", "bet api", "types"],
 	"author": "Eydrenn Araujo",
 	"bugs": {
 		"url": "https://github.com/quikcess/bet-api-types/issues"

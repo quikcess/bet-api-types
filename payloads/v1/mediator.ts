@@ -50,5 +50,5 @@ export interface APIAllMediators {
 	data: APIMediator[];
 	current_page: number;
 	total_pages: number;
-	total_bets: number;
+	total_mediators: number;
 }

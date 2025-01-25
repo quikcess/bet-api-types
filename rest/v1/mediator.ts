@@ -41,4 +41,9 @@ export type RESTGetAPIMediatorResponse = APIPayload<APIMediator>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
+export type RESTGetAPIMediatorsResponse = APIPayload<APIMediator[]>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
 export type RESTGetAPIAllMediatorsResponse = APIPayload<APIAllMediators>;
