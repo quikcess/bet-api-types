@@ -1,4 +1,10 @@
-import type { APIAllScams, APIPayload, APIScam, ISODateString } from "../../v1";
+import type {
+	APIAllScams,
+	APIPayload,
+	APIScam,
+	APIScamStats,
+	ISODateString,
+} from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
@@ -39,6 +45,11 @@ export type RESTPatchAPIScamUpdateBody = Partial<APIScam>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
 export type RESTGetAPIScamResponse = APIPayload<APIScam>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
+ */
+export type RESTGetAPIScamStatsResponse = APIPayload<APIScamStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams

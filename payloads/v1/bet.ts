@@ -35,6 +35,8 @@ export enum BetStatus {
 	InProgress = 3,
 	Closed = 4,
 	Revenged = 5,
+	Cancelled = 6,
+	Abandoned = 7,
 }
 
 /**
@@ -85,6 +87,10 @@ export interface APIBet {
 	format: APIBetFormat;
 	mode: BetMode;
 	players: APIBetPlayer[];
+	players_who_confirmed: string[];
+	cancelled_by: string | null;
+	abandoned_by: string | null;
+	given_up_by: string | null; // User who gave up the game
 	status: BetStatus;
 	type: BetType;
 	room_id: number;
@@ -120,15 +126,16 @@ export interface APIAllBets {
  */
 export interface APIBetBilledRooms {
 	sold: number; // Total number of rooms sold
-	invoicing: number; // Total amount billed for rooms only based on room_price (bet schema)
-	investment: number; // Total amount paid to have the rooms based on room_price (bet schema)
+	invoicing: number; // Total revenue generated from selling rooms, based on room_price (from the bet schema)
+	investment: number; // Total cost incurred to purchase the rooms, based on room_price (from the bet schema)
+	profit: number; // Net profit calculated as invoicing minus investment, based on room_price (from the bet schema)
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIBetBilled {
-	total: number; // Total invoiced (fee + room sales)
+	profit: number; // Total invoiced (fee + room sales)
 	fee_only: number; // Total billed without rooms, only with the imposed fee
 	rooms: APIBetBilledRooms;
 }
@@ -138,16 +145,15 @@ export interface APIBetBilled {
  */
 export interface APIBetStats {
 	total: number;
-	opened: number;
-	closed: number;
-	pending: number;
-	in_progress: number;
-	confirmed_bets: number;
+	started_bets: number;
+	closed_bets: number;
+	pending_bets: number;
+	in_progress_bets: number;
 	cancelled_bets: number;
-	abandoned_bet: number; // Confirmed the bet and disappeared
-	played_bets: number;
-	winner_bets: number; // Bets with any winner
+	abandoned_bets: number; // Confirmed the bet and disappeared
+	played_bets: number; // Bets with any winner
 	walkover_bets: number; // W.O
+	revenged_bets: number;
 	billed: APIBetBilled;
 }
 

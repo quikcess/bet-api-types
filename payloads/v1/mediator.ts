@@ -31,15 +31,16 @@ export interface APIMediatorPix {
  */
 export interface APIMediatorBilledRooms {
 	sold: number; // Total number of rooms sold
-	invoicing: number; // Total amount billed for rooms only based on room_price (bet schema)
-	investment: number; // Total amount paid to have the rooms based on room_price (bet schema)
+	invoicing: number; // Total revenue generated from selling rooms, based on room_price (from the bet schema)
+	investment: number; // Total cost incurred to purchase the rooms, based on room_price (from the bet schema)
+	profit: number; // Net profit calculated as invoicing minus investment, based on room_price (from the bet schema)
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIMediatorBilled {
-	total: number; // Total invoiced (fee + room sales)
+	profit: number; // Total invoiced (fee + room sales)
 	fee_only: number; // Total billed without rooms, only with the imposed fee
 	rooms: APIMediatorBilledRooms;
 }
@@ -48,12 +49,16 @@ export interface APIMediatorBilled {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIMediatorStats {
-	confirmed_bets: number;
+	total: number;
+	started_bets: number;
+	closed_bets: number;
+	pending_bets: number;
+	in_progress_bets: number;
 	cancelled_bets: number;
-	abandoned_bet: number; // Confirmed the bet and disappeared
-	played_bets: number;
-	winner_bets: number; // Bets with any winner
+	abandoned_bets: number; // Confirmed the bet and disappeared
+	played_bets: number; // Bets with any winner
 	walkover_bets: number; // W.O
+	revenged_bets: number;
 	billed: APIMediatorBilled;
 }
 

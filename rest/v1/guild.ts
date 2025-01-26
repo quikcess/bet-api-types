@@ -1,6 +1,7 @@
 import type {
 	APIAllGuilds,
 	APIGuild,
+	APIGuildStats,
 	APIPayload,
 	ISODateString,
 } from "../../v1";
@@ -30,6 +31,11 @@ export type RESTPatchAPIGuildUpdateBody = Partial<APIGuild>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export type RESTGetAPIGuildResponse = APIPayload<APIGuild>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
+ */
+export type RESTGetAPIGuildStatsResponse = APIPayload<APIGuildStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds

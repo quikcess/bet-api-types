@@ -67,12 +67,12 @@ export type RESTGetAPIAllBetsResponse = APIPayload<APIAllBets>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIBetStats = APIPayload<APIBetStats>;
+export type RESTGetAPIBetStatsResponse = APIPayload<APIBetStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIChannelIdsFromPlayerId =
+export type RESTGetAPIChannelIdsFromPlayerIdResponse =
 	APIPayload<APIChannelIdsFromPlayerId>;
 
 /**

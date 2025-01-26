@@ -28,7 +28,7 @@ export interface APIUserNotifications {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIUserBilledRooms {
-	purchased: number; // Total number of split rooms (tot room: $1.8, split: $0.90)
+	purchased: number; // Total rooms purchased
 	investment: number; // Total amount paid to have the rooms based on room_price
 }
 
@@ -36,7 +36,8 @@ export interface APIUserBilledRooms {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIUserBilled {
-	total: number; // Total invoiced (fee only)
+	fee_only: number; // Total invoiced (fee only)
+	profit: number;
 	rooms: APIUserBilledRooms;
 }
 
@@ -44,13 +45,19 @@ export interface APIUserBilled {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIUserStats {
+	total: number;
+	started_bets: number;
+	closed_bets: number;
+	pending_bets: number;
+	in_progress_bets: number;
 	confirmed_bets: number;
-	abandoned_bet: number; // Confirmed the bet and disappeared
 	cancelled_bets: number;
-	played_bets: number;
+	abandoned_bets: number; // Confirmed the bet and disappeared
+	played_bets: number; // Bets with any winner
+	walkover_bets: number; // W.O
+	revenged_bets: number;
 	won_bets: number;
 	lost_bets: number;
-	walkover_bets: number; // W.O
 	billed: APIUserBilled;
 }
 

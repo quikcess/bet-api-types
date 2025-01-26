@@ -1,6 +1,7 @@
 import type {
 	APIAllBlacklist,
 	APIBlacklist,
+	APIBlacklistStats,
 	APIPayload,
 	ISODateString,
 } from "../../v1";
@@ -45,6 +46,11 @@ export type RESTPatchAPIBlacklistUpdateBody = Partial<APIBlacklist>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
 export type RESTGetAPIBlacklistResponse = APIPayload<APIBlacklist>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
+ */
+export type RESTGetAPIBlacklistStatsResponse = APIPayload<APIBlacklistStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
