@@ -1,6 +1,7 @@
 import type {
 	APIAllMediators,
 	APIMediator,
+	APIMediatorStats,
 	APIPayload,
 	ISODateString,
 } from "../../v1";
@@ -42,6 +43,11 @@ export type RESTGetAPIMediatorResponse = APIPayload<APIMediator>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export type RESTGetAPIMediatorsResponse = APIPayload<APIMediator[]>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export type RESTGetAPIMediatorStatsResponse = APIPayload<APIMediatorStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators

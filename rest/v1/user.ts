@@ -1,4 +1,10 @@
-import type { APIAllUsers, APIPayload, APIUser, ISODateString } from "../../v1";
+import type {
+	APIAllUsers,
+	APIPayload,
+	APIUser,
+	APIUserStats,
+	ISODateString,
+} from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
@@ -37,6 +43,11 @@ export type RESTGetAPIUserResponse = APIPayload<APIUser>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export type RESTGetAPIUsersResponse = APIPayload<APIUser[]>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
+export type RESTGetAPIUserStatsResponse = APIPayload<APIUserStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
