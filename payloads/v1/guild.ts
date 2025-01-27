@@ -34,6 +34,7 @@ export interface APIGuildLogsManagements {
 export interface APIGuildLogsSystems {
 	alerts: string | null;
 	reports: string | null;
+	resets: string | null;
 }
 
 /**

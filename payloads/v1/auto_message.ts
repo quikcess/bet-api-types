@@ -28,6 +28,7 @@ export interface APIAutoMessagePayload {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/automessages
  */
 export interface APIAutoMessage {
+	id: string;
 	guild_id: string;
 	type: AutoMessageType;
 	payload: APIAutoMessagePayload;

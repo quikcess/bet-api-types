@@ -79,3 +79,8 @@ export type RESTGetAPIChannelIdsFromPlayerIdResponse =
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export type RESTGetAPIBetThreadWaitTimeResponse = APIPayload<number>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
+ */
+export type RESTGetAPIBetCountResponse = APIPayload<number>;

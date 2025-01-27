@@ -46,18 +46,18 @@ export interface APIUserBilled {
  */
 export interface APIUserStats {
 	total: number;
-	started_bets: number;
-	closed_bets: number;
-	pending_bets: number;
-	in_progress_bets: number;
-	confirmed_bets: number;
-	cancelled_bets: number;
-	abandoned_bets: number; // Confirmed the bet and disappeared
-	played_bets: number; // Bets with any winner
-	walkover_bets: number; // W.O
-	revenged_bets: number;
-	won_bets: number;
-	lost_bets: number;
+	started: number;
+	closed: number;
+	pending: number;
+	in_progress: number;
+	confirmed: number;
+	cancelled: number;
+	abandoned: number; // Confirmed the bet and disappeared
+	played: number; // Bets with any winner
+	walkover: number; // W.O
+	revenged: number;
+	won: number;
+	lost: number;
 	billed: APIUserBilled;
 }
 
