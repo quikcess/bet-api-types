@@ -79,7 +79,7 @@ export type APIBetFormat = string;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIGuildBet {
-	id: string;
+	bet_id: string;
 	guild_id: string;
 	platform: BetPlatform;
 	format: APIBetFormat;
