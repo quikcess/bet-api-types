@@ -50,8 +50,6 @@ export interface APIMediatorBilled {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIGuildMediatorStats {
-	user_id: string;
-	guild_id: string;
 	total: number;
 	started: number;
 	closed: number;
@@ -74,10 +72,20 @@ export interface APITopGuildMediatorStats {
 	rooms_sold: number;
 }
 
+export interface APIGuildMediatorStatsPayload extends APIGuildMediatorStats {
+	user_id: string;
+	guild_id: string;
+}
+
 export interface APIMediatorStats
 	extends Exclude<APIGuildMediatorStats, "guild_id"> {
 	total_guilds: number;
 	top_guild_stats: APITopGuildMediatorStats;
+}
+
+export interface APIMediatorStatsPayload extends APIMediatorStats {
+	user_id: string;
+	guild_id: string;
 }
 
 /**
@@ -94,7 +102,6 @@ export interface APIMediator {
 
 export interface APIGuildMediator {
 	user_id: string;
-	mediator: APIMediator;
 	guild_id: string;
 	category_id: string | null;
 	pix: APIGuildMediatorPix;

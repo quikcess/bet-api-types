@@ -45,8 +45,6 @@ export interface APIUserBilled {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIGuildUserStats {
-	user_id: string;
-	guild_id: string;
 	total: number;
 	started: number;
 	closed: number;
@@ -63,6 +61,11 @@ export interface APIGuildUserStats {
 	billed: APIUserBilled;
 }
 
+export interface APIGuildUserStatsPayload extends APIGuildUserStats {
+	user_id: string;
+	guild_id: string;
+}
+
 export interface APITopGuildUserStats {
 	guild_id: string;
 	highest_fee_only: number;
@@ -74,6 +77,11 @@ export interface APITopGuildUserStats {
 export interface APIUserStats extends Exclude<APIGuildUserStats, "guild_id"> {
 	total_guilds: number;
 	top_guild_stats: APITopGuildUserStats;
+}
+
+export interface APIUserStatsPayload extends APIUserStats {
+	user_id: string;
+	guild_id: string;
 }
 
 /**
