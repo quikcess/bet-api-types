@@ -76,7 +76,7 @@ export interface APIGuildPermission {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuild {
-	guild_id: string;
+	id: string;
 	permissions: APIGuildPermission[];
 	systems: number[];
 	channels: APIGuildChannels;

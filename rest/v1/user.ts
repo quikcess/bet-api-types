@@ -1,22 +1,23 @@
 import type {
-	APIAllUsers,
+	APIGuildUser,
+	APIGuildUsers,
 	APIPayload,
-	APIUser,
 	APIUserStats,
+	APIUsers,
 	ISODateString,
 } from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTGetAPIUserBaseQuery = {
+export type RESTGetAPIGuildUserBaseQuery = {
 	guild_id?: string;
 };
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface RESTGetAPIUsersPaginationQuery {
+export interface RESTGetAPIGuildUsersPaginationQuery {
 	page?: number;
 	limit?: number;
 	skip?: number;
@@ -27,22 +28,22 @@ export interface RESTGetAPIUsersPaginationQuery {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTPostAPIUserCreateBody = APIUser;
+export type RESTPostAPIGuildUserCreateBody = APIGuildUser;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTPatchAPIUserUpdateBody = Partial<APIUser>;
+export type RESTPatchAPIGuildUserUpdateBody = Partial<APIGuildUser>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTGetAPIUserResponse = APIPayload<APIUser>;
+export type RESTGetAPIGuildUserResponse = APIPayload<APIGuildUser>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTGetAPIUsersResponse = APIPayload<APIUser[]>;
+export type RESTGetAPIGuildUsersResponse = APIPayload<APIGuildUsers>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
@@ -52,4 +53,9 @@ export type RESTGetAPIUserStatsResponse = APIPayload<APIUserStats>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTGetAPIAllUsersResponse = APIPayload<APIAllUsers>;
+export type RESTGetAPIGuildUserStatsResponse = APIPayload<APIUserStats>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
+export type RESTGetAPIUsersResponse = APIPayload<APIUsers>;

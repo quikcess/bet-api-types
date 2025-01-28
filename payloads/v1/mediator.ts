@@ -3,7 +3,7 @@ import type { ISODateString } from "../../v1";
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export interface APIMediatorLimiter {
+export interface APIGuildMediatorLimiter {
 	simultaneous: number;
 	daily: number;
 }
@@ -11,7 +11,7 @@ export interface APIMediatorLimiter {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export interface APIMediatorSignature {
+export interface APIGuildMediatorSignature {
 	role_id: string | null;
 	expiration_time: number | null;
 	autorole: boolean;
@@ -20,7 +20,7 @@ export interface APIMediatorSignature {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export interface APIMediatorPix {
+export interface APIGuildMediatorPix {
 	key: string;
 	name: string;
 	message: string;
@@ -31,24 +31,27 @@ export interface APIMediatorPix {
  */
 export interface APIMediatorBilledRooms {
 	sold: number; // Total number of rooms sold
-	invoicing: number; // Total revenue generated from selling rooms, based on room_price (from the bet schema)
-	investment: number; // Total cost incurred to purchase the rooms, based on room_price (from the bet schema)
-	profit: number; // Net profit calculated as invoicing minus investment, based on room_price (from the bet schema)
+	revenue: number; // Total revenue generated from selling rooms, based on room_price (from the bet schema)
+	expenses: number; // Total expenses incurred to purchase the rooms, based on room_price (from the bet schema)
+	profit: number; // Net profit calculated as revenue minus expenses, based on room_price (from the bet schema)
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIMediatorBilled {
-	profit: number; // Total invoiced (fee + room sales)
+	profit: number; // Total profit (fee_only + rooms.profit)
 	fee_only: number; // Total billed without rooms, only with the imposed fee
+	revenue: number; // Total revenue (fee_only + rooms.revenue)
 	rooms: APIMediatorBilledRooms;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export interface APIMediatorStats {
+export interface APIGuildMediatorStats {
+	user_id: string;
+	guild_id: string;
 	total: number;
 	started: number;
 	closed: number;
@@ -62,20 +65,45 @@ export interface APIMediatorStats {
 	billed: APIMediatorBilled;
 }
 
+export interface APITopGuildMediatorStats {
+	guild_id: string;
+	highest_fee_only: number;
+	highest_profit: number;
+	highest_expenses: number;
+	highest_revenue: number;
+	rooms_sold: number;
+}
+
+export interface APIMediatorStats
+	extends Exclude<APIGuildMediatorStats, "guild_id"> {
+	total_guilds: number;
+	top_guild_stats: APITopGuildMediatorStats;
+}
+
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIMediator {
 	user_id: string;
+	uptime: number;
+	last_entry: number | null;
+	stats: APIMediatorStats; // All the time
+	created_at: ISODateString;
+	updated_at: ISODateString;
+}
+
+export interface APIGuildMediator {
+	user_id: string;
+	mediator: APIMediator;
 	guild_id: string;
 	category_id: string | null;
-	pix: APIMediatorPix;
+	pix: APIGuildMediatorPix;
 	virtual_accounts: number;
 	uptime: number;
 	last_entry: number | null;
-	signature: APIMediatorSignature;
-	limiter: APIMediatorLimiter;
-	stats: APIMediatorStats; // All the time
+	signature: APIGuildMediatorSignature;
+	limiter: APIGuildMediatorLimiter;
+	stats: APIGuildMediatorStats;
 	created_at: ISODateString;
 	updated_at: ISODateString;
 }
@@ -83,8 +111,18 @@ export interface APIMediator {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export interface APIAllMediators {
+export interface APIMediators {
 	data: APIMediator[];
+	current_page: number;
+	total_pages: number;
+	total_mediators: number;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export interface APIGuildMediators {
+	data: APIGuildMediator[];
 	current_page: number;
 	total_pages: number;
 	total_mediators: number;

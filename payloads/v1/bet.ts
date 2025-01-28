@@ -67,9 +67,7 @@ export interface APIBetLog {
  */
 export interface APIBetPlayer {
 	user_id: string;
-	wins: number;
-	loses: number;
-	consecutives: number;
+	winner: boolean | null;
 }
 
 /**
@@ -80,9 +78,9 @@ export type APIBetFormat = string;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APIBet {
+export interface APIGuildBet {
+	id: string;
 	guild_id: string;
-	bet_id: string;
 	platform: BetPlatform;
 	format: APIBetFormat;
 	mode: BetMode;
@@ -114,8 +112,8 @@ export interface APIBet {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APIAllBets {
-	data: APIBet[];
+export interface APIGuildBets {
+	data: APIGuildBet[];
 	current_page: number;
 	total_pages: number;
 	total_bets: number;
@@ -126,24 +124,26 @@ export interface APIAllBets {
  */
 export interface APIBetBilledRooms {
 	sold: number; // Total number of rooms sold
-	invoicing: number; // Total revenue generated from selling rooms, based on room_price (from the bet schema)
-	investment: number; // Total cost incurred to purchase the rooms, based on room_price (from the bet schema)
-	profit: number; // Net profit calculated as invoicing minus investment, based on room_price (from the bet schema)
+	revenue: number; // Total revenue generated from selling rooms, based on room_price (from the bet schema)
+	expenses: number; // Total expenses incurred to purchase the rooms, based on room_price (from the bet schema)
+	profit: number; // Net profit calculated as revenue minus expenses, based on room_price (from the bet schema)
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export interface APIBetBilled {
-	profit: number; // Total invoiced (fee + room sales)
+	profit: number; // Total profit (fee_only + rooms.profit)
 	fee_only: number; // Total billed without rooms, only with the imposed fee
+	revenue: number; // Total revenue (fee_only + rooms.revenue)
 	rooms: APIBetBilledRooms;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APIBetStats {
+export interface APIGuildBetStats {
+	guild_id: string;
 	total: number;
 	started: number;
 	closed: number;
@@ -155,6 +155,23 @@ export interface APIBetStats {
 	walkover: number; // W.O
 	revenged: number;
 	billed: APIBetBilled;
+}
+
+export interface APITopGuildStats {
+	guild_id: string;
+	highest_fee_only: number;
+	highest_profit: number;
+	highest_expenses: number;
+	highest_revenue: number;
+	rooms_sold: number;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
+ */
+export interface APIBetStats extends Exclude<APIGuildBetStats, "guild_id"> {
+	total_guilds: number;
+	top_guild_stats: APITopGuildStats;
 }
 
 /**

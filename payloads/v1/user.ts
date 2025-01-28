@@ -3,14 +3,14 @@ import type { ISODateString } from "../../v1";
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface APIUserWallet {
+export interface APIGuildUserWallet {
 	credits: number;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface APIUserScores {
+export interface APIGuildUserScores {
 	wins: number;
 	loses: number;
 	consecutives: number;
@@ -19,7 +19,7 @@ export interface APIUserScores {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface APIUserNotifications {
+export interface APIGuildUserNotifications {
 	events: boolean;
 	waiting_bets: boolean;
 }
@@ -29,22 +29,24 @@ export interface APIUserNotifications {
  */
 export interface APIUserBilledRooms {
 	purchased: number; // Total rooms purchased
-	investment: number; // Total amount paid to have the rooms based on room_price
+	expenses: number; // Total amount paid to have the rooms based on room_price
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIUserBilled {
+	profit: number; // fee only - rooms.expenses
 	fee_only: number; // Total invoiced (fee only)
-	profit: number;
 	rooms: APIUserBilledRooms;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface APIUserStats {
+export interface APIGuildUserStats {
+	user_id: string;
+	guild_id: string;
 	total: number;
 	started: number;
 	closed: number;
@@ -52,13 +54,26 @@ export interface APIUserStats {
 	in_progress: number;
 	confirmed: number;
 	cancelled: number;
-	abandoned: number; // Confirmed the bet and disappeared
-	played: number; // Bets with any winner
-	walkover: number; // W.O
+	abandoned: number;
+	played: number;
+	walkover: number;
 	revenged: number;
 	won: number;
 	lost: number;
 	billed: APIUserBilled;
+}
+
+export interface APITopGuildUserStats {
+	guild_id: string;
+	highest_fee_only: number;
+	highest_profit: number;
+	highest_expenses: number;
+	rooms_purchased: number;
+}
+
+export interface APIUserStats extends Exclude<APIGuildUserStats, "guild_id"> {
+	total_guilds: number;
+	top_guild_stats: APITopGuildUserStats;
 }
 
 /**
@@ -66,11 +81,18 @@ export interface APIUserStats {
  */
 export interface APIUser {
 	user_id: string;
-	guild_id: string;
-	wallet: APIUserWallet;
 	stats: APIUserStats; // All the time
-	scores: APIUserScores;
-	notifications: APIUserNotifications;
+	created_at: ISODateString;
+	updated_at: ISODateString;
+}
+
+export interface APIGuildUser {
+	user_id: string;
+	guild_id: string;
+	wallet: APIGuildUserWallet;
+	stats: APIGuildUserStats;
+	scores: APIGuildUserScores;
+	notifications: APIGuildUserNotifications;
 	created_at: ISODateString;
 	updated_at: ISODateString;
 }
@@ -78,8 +100,18 @@ export interface APIUser {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface APIAllUsers {
+export interface APIUsers {
 	data: APIUser[];
+	current_page: number;
+	total_pages: number;
+	total_users: number;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
+export interface APIGuildUsers {
+	data: APIGuildUser[];
 	current_page: number;
 	total_pages: number;
 	total_users: number;

@@ -17,7 +17,7 @@ export enum AutoMessageType {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/automessages
  */
-export interface APIAutoMessagePayload {
+export interface APIGuildAutoMessagePayload {
 	embeds?: APIEmbed[];
 	content?: string;
 	files?: string[];
@@ -27,11 +27,11 @@ export interface APIAutoMessagePayload {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/automessages
  */
-export interface APIAutoMessage {
+export interface APIGuildAutoMessage {
 	id: string;
 	guild_id: string;
 	type: AutoMessageType;
-	payload: APIAutoMessagePayload;
+	payload: APIGuildAutoMessagePayload;
 	time_start: ISODateString;
 	time_end: ISODateString;
 	created_at: ISODateString;

@@ -1,8 +1,8 @@
 import type {
-	APIAllBets,
-	APIBet,
-	APIBetStats,
 	APIChannelIdsFromPlayerId,
+	APIGuildBet,
+	APIGuildBetStats,
+	APIGuildBets,
 	APIPayload,
 	ISODateString,
 } from "../../v1";
@@ -10,14 +10,14 @@ import type {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIBetBaseQuery = {
+export type RESTGetAPIGuildBetBaseQuery = {
 	guild_id?: string;
 };
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface RESTGetAPIBetsPaginationQuery {
+export interface RESTGetAPIGuildBetsPaginationQuery {
 	page?: number;
 	limit?: number;
 	skip?: number;
@@ -28,46 +28,47 @@ export interface RESTGetAPIBetsPaginationQuery {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface RESTGetAPIAllBetsQuery extends RESTGetAPIBetsPaginationQuery {
+export interface RESTGetAPIGuildBetsQuery
+	extends RESTGetAPIGuildBetsPaginationQuery {
 	player_ids?: string[];
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface RESTGetAPIAPIChannelIdsFromPlayerIdQuery {
+export interface RESTGetAPIChannelIdsFromPlayerIdQuery {
 	player_ids?: string[];
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTPostAPIBetCreateBody = APIBet;
+export type RESTPostAPIGuildBetCreateBody = APIGuildBet;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTPatchAPIBetUpdateBody = Partial<APIBet>;
+export type RESTPatchAPIGuildBetUpdateBody = Partial<APIGuildBet>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIBetResponse = APIPayload<APIBet>;
+export type RESTGetAPIGuildBetResponse = APIPayload<APIGuildBet>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIBetBulkResponse = APIPayload<APIBet[]>;
+export type RESTGetAPIGuildBetBulkResponse = APIPayload<APIGuildBet[]>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIAllBetsResponse = APIPayload<APIAllBets>;
+export type RESTGetAPIGuildBetsResponse = APIPayload<APIGuildBets>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIBetStatsResponse = APIPayload<APIBetStats>;
+export type RESTGetAPIGuildBetStatsResponse = APIPayload<APIGuildBetStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
@@ -78,9 +79,9 @@ export type RESTGetAPIChannelIdsFromPlayerIdResponse =
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIBetThreadWaitTimeResponse = APIPayload<number>;
+export type RESTGetAPIGuildBetThreadWaitTimeResponse = APIPayload<number>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTGetAPIBetCountResponse = APIPayload<number>;
+export type RESTGetAPIGuildBetCountResponse = APIPayload<number>;

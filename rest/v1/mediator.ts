@@ -1,7 +1,9 @@
 import type {
-	APIAllMediators,
-	APIMediator,
+	APIGuildMediator,
+	APIGuildMediatorStats,
+	APIGuildMediators,
 	APIMediatorStats,
+	APIMediators,
 	APIPayload,
 	ISODateString,
 } from "../../v1";
@@ -9,14 +11,14 @@ import type {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTGetAPIMediatorBaseQuery = {
+export type RESTGetAPIGuildMediatorBaseQuery = {
 	guild_id?: string;
 };
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export interface RESTGetAPIMediatorsPaginationQuery {
+export interface RESTGetAPIGuildMediatorsPaginationQuery {
 	page?: number;
 	limit?: number;
 	skip?: number;
@@ -27,22 +29,23 @@ export interface RESTGetAPIMediatorsPaginationQuery {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTPostAPIMediatorCreateBody = APIMediator;
+export type RESTPostAPIGuildMediatorCreateBody = APIGuildMediator;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTPatchAPIMediatorUpdateBody = Partial<APIMediator>;
+export type RESTPatchAPIGuildMediatorUpdateBody = Partial<APIGuildMediator>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTGetAPIMediatorResponse = APIPayload<APIMediator>;
+export type RESTGetAPIGuildMediatorResponse = APIPayload<APIGuildMediator>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTGetAPIMediatorsResponse = APIPayload<APIMediator[]>;
+export type RESTGetAPIGuildMediatorStatsResponse =
+	APIPayload<APIGuildMediatorStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
@@ -52,4 +55,9 @@ export type RESTGetAPIMediatorStatsResponse = APIPayload<APIMediatorStats>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTGetAPIAllMediatorsResponse = APIPayload<APIAllMediators>;
+export type RESTGetAPIMediatorsResponse = APIPayload<APIMediators>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export type RESTGetAPIGuildMediatorsResponse = APIPayload<APIGuildMediators>;
