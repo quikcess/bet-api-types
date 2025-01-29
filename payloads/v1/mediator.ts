@@ -74,7 +74,7 @@ export interface APITopGuildMediatorStats extends APIMediatorBilled {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIGuildMediatorContextStats extends APIGuildMediatorStats {
-	mediator_id: string;
+	mediator_id: string | null;
 	guild_id: string;
 }
 
