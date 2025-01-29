@@ -54,7 +54,7 @@ export interface APIGuildUserStats {
 	cancelled: number;
 	abandoned: number;
 	played: number;
-	walkover: number;
+	walkover: number; // W.O
 	revenged: number;
 	won: number;
 	lost: number;
