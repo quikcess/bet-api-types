@@ -157,6 +157,9 @@ export interface APIGuildBetStats {
 	billed: APIBetBilled;
 }
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
+ */
 export interface APITopGuildStats {
 	guild_id: string;
 	highest_fee_only: number;
@@ -173,8 +176,3 @@ export interface APIBetStats extends Exclude<APIGuildBetStats, "guild_id"> {
 	total_guilds: number;
 	top_guild_stats: APITopGuildStats;
 }
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
- */
-export type APIChannelIdsFromPlayerId = Record<string, string[]>;

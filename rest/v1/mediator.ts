@@ -1,8 +1,8 @@
 import type {
 	APIGuildMediator,
-	APIGuildMediatorStats,
+	APIGuildMediatorContextStats,
 	APIGuildMediators,
-	APIMediatorStats,
+	APIMediatorContextStats,
 	APIMediators,
 	APIPayload,
 	ISODateString,
@@ -45,12 +45,13 @@ export type RESTGetAPIGuildMediatorResponse = APIPayload<APIGuildMediator>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export type RESTGetAPIGuildMediatorStatsResponse =
-	APIPayload<APIGuildMediatorStats>;
+	APIPayload<APIGuildMediatorContextStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTGetAPIMediatorStatsResponse = APIPayload<APIMediatorStats>;
+export type RESTGetAPIMediatorStatsResponse =
+	APIPayload<APIMediatorContextStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators

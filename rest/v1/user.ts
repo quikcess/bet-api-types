@@ -2,7 +2,7 @@ import type {
 	APIGuildUser,
 	APIGuildUsers,
 	APIPayload,
-	APIUserStats,
+	APIUserContextStats,
 	APIUsers,
 	ISODateString,
 } from "../../v1";
@@ -48,12 +48,12 @@ export type RESTGetAPIGuildUsersResponse = APIPayload<APIGuildUsers>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTGetAPIUserStatsResponse = APIPayload<APIUserStats>;
+export type RESTGetAPIUserStatsResponse = APIPayload<APIUserContextStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTGetAPIGuildUserStatsResponse = APIPayload<APIUserStats>;
+export type RESTGetAPIGuildUserStatsResponse = APIPayload<APIUserContextStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users

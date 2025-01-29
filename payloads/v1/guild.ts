@@ -88,7 +88,7 @@ export interface APIGuild {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
-export interface APIAllGuilds {
+export interface APIGuilds {
 	data: APIGuild[];
 	current_page: number;
 	total_pages: number;

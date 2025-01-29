@@ -1,5 +1,4 @@
 import type {
-	APIChannelIdsFromPlayerId,
 	APIGuildBet,
 	APIGuildBetStats,
 	APIGuildBets,
@@ -69,12 +68,6 @@ export type RESTGetAPIGuildBetsResponse = APIPayload<APIGuildBets>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
 export type RESTGetAPIGuildBetStatsResponse = APIPayload<APIGuildBetStats>;
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
- */
-export type RESTGetAPIChannelIdsFromPlayerIdResponse =
-	APIPayload<APIChannelIdsFromPlayerId>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets

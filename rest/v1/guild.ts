@@ -1,7 +1,7 @@
 import type {
-	APIAllGuilds,
 	APIGuild,
 	APIGuildStats,
+	APIGuilds,
 	APIPayload,
 	ISODateString,
 } from "../../v1";
@@ -40,4 +40,4 @@ export type RESTGetAPIGuildStatsResponse = APIPayload<APIGuildStats>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
-export type RESTGetAPIAllGuildsResponse = APIPayload<APIAllGuilds>;
+export type RESTGetAPIGuildsResponse = APIPayload<APIGuilds>;

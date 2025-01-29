@@ -63,6 +63,9 @@ export interface APIGuildMediatorStats {
 	billed: APIMediatorBilled;
 }
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
 export interface APITopGuildMediatorStats {
 	guild_id: string;
 	highest_fee_only: number;
@@ -72,20 +75,26 @@ export interface APITopGuildMediatorStats {
 	rooms_sold: number;
 }
 
-export interface APIGuildMediatorStatsPayload extends APIGuildMediatorStats {
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export interface APIGuildMediatorContextStats extends APIGuildMediatorStats {
 	user_id: string;
 	guild_id: string;
 }
 
-export interface APIMediatorStats
-	extends Exclude<APIGuildMediatorStats, "guild_id"> {
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export interface APIMediatorStats extends APIGuildMediatorStats {}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export interface APIMediatorContextStats extends APIMediatorStats {
+	user_id: string;
 	total_guilds: number;
 	top_guild_stats: APITopGuildMediatorStats;
-}
-
-export interface APIMediatorStatsPayload extends APIMediatorStats {
-	user_id: string;
-	guild_id: string;
 }
 
 /**
@@ -100,6 +109,9 @@ export interface APIMediator {
 	updated_at: ISODateString;
 }
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
 export interface APIGuildMediator {
 	user_id: string;
 	guild_id: string;
