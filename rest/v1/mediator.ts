@@ -2,6 +2,7 @@ import type {
 	APIGuildMediator,
 	APIGuildMediatorContextStats,
 	APIGuildMediators,
+	APIMediator,
 	APIMediatorContextStats,
 	APIMediators,
 	APIPayload,
@@ -44,14 +45,12 @@ export type RESTGetAPIGuildMediatorResponse = APIPayload<APIGuildMediator>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTGetAPIGuildMediatorStatsResponse =
-	APIPayload<APIGuildMediatorContextStats>;
+export type RESTGetAPIMediatorResponse = APIPayload<APIMediator>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTGetAPIMediatorStatsResponse =
-	APIPayload<APIMediatorContextStats>;
+export type RESTGetAPIGuildMediatorsResponse = APIPayload<APIGuildMediators>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
@@ -61,4 +60,11 @@ export type RESTGetAPIMediatorsResponse = APIPayload<APIMediators>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTGetAPIGuildMediatorsResponse = APIPayload<APIGuildMediators>;
+export type RESTGetAPIGuildMediatorStatsResponse =
+	APIPayload<APIGuildMediatorContextStats>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export type RESTGetAPIMediatorStatsResponse =
+	APIPayload<APIMediatorContextStats>;
