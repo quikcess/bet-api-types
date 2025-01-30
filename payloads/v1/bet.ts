@@ -160,19 +160,14 @@ export interface APIGuildBetStats {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APITopGuildStats {
-	guild_id: string;
-	highest_fee_only: number;
-	highest_profit: number;
-	highest_expenses: number;
-	highest_revenue: number;
-	rooms_sold: number;
+export interface APIBetStats extends Exclude<APIGuildBetStats, "guild_id"> {
+	total_guilds: number;
+	top_guild_stats: APITopGuildStats;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APIBetStats extends Exclude<APIGuildBetStats, "guild_id"> {
-	total_guilds: number;
-	top_guild_stats: APITopGuildStats;
+export interface APITopGuildStats extends APIBetBilled {
+	guild_id: string | null;
 }
