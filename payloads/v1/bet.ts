@@ -160,7 +160,7 @@ export interface APIGuildBetStats {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APIBetStats extends Exclude<APIGuildBetStats, "guild_id"> {
+export interface APIBetStats extends Omit<APIGuildBetStats, "guild_id"> {
 	total_guilds: number;
 	top_guild_stats: APITopGuildStats;
 }
