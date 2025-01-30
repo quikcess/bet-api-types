@@ -65,7 +65,7 @@ export interface APIGuildUserStats {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIGuildUserContextStats extends APIGuildUserStats {
-	user_id: string;
+	user_id: string | null;
 	guild_id: string;
 }
 
@@ -78,7 +78,7 @@ export interface APIUserStats extends APIGuildUserStats {}
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
 export interface APIUserContextStats extends APIUserStats {
-	user_id: string;
+	user_id: string | null;
 	total_guilds: number;
 	top_guild_stats: APITopGuildUserStats;
 }
@@ -86,12 +86,8 @@ export interface APIUserContextStats extends APIUserStats {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface APITopGuildUserStats {
-	guild_id: string;
-	highest_fee_only: number;
-	highest_profit: number;
-	highest_expenses: number;
-	rooms_purchased: number;
+export interface APITopGuildUserStats extends APIUserBilled {
+	guild_id: string | null;
 }
 
 /**
