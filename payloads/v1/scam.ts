@@ -39,7 +39,7 @@ export interface APIScam {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
-export interface APIAllScams {
+export interface APIScams {
 	data: APIScam[];
 	current_page: number;
 	total_pages: number;
@@ -49,7 +49,8 @@ export interface APIAllScams {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
-export interface APIScamStats {
+export interface APIGuildScamStats {
+	guild_id: string;
 	total: number;
 	pending: number;
 	investigating: number;
@@ -64,6 +65,15 @@ export interface APIScamStats {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
-export interface APIGuildScamStats extends APIScamStats {
-	guild_id: string;
+export interface APIScamStats extends APIGuildScamStats {
+	total_guilds: number;
+	top_guild_stats: APITopGuildScamsStats;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
+ */
+export interface APITopGuildScamsStats
+	extends Omit<APIGuildScamStats, "guild_id"> {
+	guild_id: string | null;
 }

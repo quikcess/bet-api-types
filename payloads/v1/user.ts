@@ -56,6 +56,7 @@ export interface APIGuildUserStats {
 	played: number;
 	walkover: number; // W.O
 	revenged: number;
+	punishments: number; // How many times have you been punished?
 	won: number;
 	lost: number;
 	billed: APIUserBilled;
@@ -64,7 +65,8 @@ export interface APIGuildUserStats {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface APIGuildUserContextStats extends APIGuildUserStats {
+export interface APIGuildUserContextStats
+	extends Omit<APIGuildUserStats, "punishments"> {
 	user_id: string | null;
 	guild_id: string;
 }
@@ -77,7 +79,7 @@ export interface APIUserStats extends APIGuildUserStats {}
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export interface APIUserContextStats extends APIUserStats {
+export interface APIUserContextStats extends Omit<APIUserStats, "punishments"> {
 	user_id: string | null;
 	total_guilds: number;
 	top_guild_stats: APITopGuildUserStats;

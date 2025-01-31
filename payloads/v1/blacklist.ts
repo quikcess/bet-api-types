@@ -36,7 +36,7 @@ export interface APIBlacklist {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
-export interface APIAllBlacklist {
+export interface APIBlacklists {
 	data: APIBlacklist[];
 	current_page: number;
 	total_pages: number;
@@ -46,7 +46,8 @@ export interface APIAllBlacklist {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
-export interface APIBlacklistStats {
+export interface APIGuildBlacklistStats {
+	guild_id: string;
 	total: number;
 	pending: number;
 	investigating: number;
@@ -59,8 +60,17 @@ export interface APIBlacklistStats {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
-export interface APIGuildBlacklistStats extends APIBlacklistStats {
-	guild_id: string;
+export interface APIBlacklistStats extends APIGuildBlacklistStats {
+	total_guilds: number;
+	top_guild_stats: APITopGuildBlacklistStats;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
+ */
+export interface APITopGuildBlacklistStats
+	extends Omit<APIGuildBlacklistStats, "guild_id"> {
+	guild_id: string | null;
 }

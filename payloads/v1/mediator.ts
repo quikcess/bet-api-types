@@ -60,6 +60,7 @@ export interface APIGuildMediatorStats {
 	played: number; // Bets with any winner
 	walkover: number; // W.O
 	revenged: number;
+	punishments: number; // How many times have you been punished?
 	billed: APIMediatorBilled;
 }
 
@@ -73,7 +74,8 @@ export interface APITopGuildMediatorStats extends APIMediatorBilled {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export interface APIGuildMediatorContextStats extends APIGuildMediatorStats {
+export interface APIGuildMediatorContextStats
+	extends Omit<APIGuildMediatorStats, "punishments"> {
 	mediator_id: string | null;
 	guild_id: string;
 }
@@ -86,7 +88,8 @@ export interface APIMediatorStats extends APIGuildMediatorStats {}
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export interface APIMediatorContextStats extends APIMediatorStats {
+export interface APIMediatorContextStats
+	extends Omit<APIMediatorStats, "punishments"> {
 	mediator_id: string | null;
 	total_guilds: number;
 	top_guild_stats: APITopGuildMediatorStats;
