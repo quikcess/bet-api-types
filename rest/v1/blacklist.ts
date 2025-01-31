@@ -1,7 +1,7 @@
 import type {
-	APIAllBlacklist,
 	APIBlacklist,
 	APIBlacklistStats,
+	APIBlacklists,
 	APIGuildBlacklistStats,
 	APIPayload,
 	ISODateString,
@@ -17,7 +17,7 @@ export type RESTGetAPIBlacklistBaseQuery = {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
-export interface RESTGetAPIBlacklistPaginationQuery {
+export interface RESTGetAPIBlacklistsPaginationQuery {
 	page?: number;
 	limit?: number;
 	skip?: number;
@@ -28,8 +28,8 @@ export interface RESTGetAPIBlacklistPaginationQuery {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
-export interface RESTGetAPIAllBlacklistQuery
-	extends RESTGetAPIBlacklistPaginationQuery {
+export interface RESTGetAPIBlacklistsQuery
+	extends RESTGetAPIBlacklistsPaginationQuery {
 	guild_id?: string;
 }
 
@@ -62,4 +62,4 @@ export type RESTGetAPIGuildBlacklistStatsResponse =
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
-export type RESTGetAPIAllBlacklistResponse = APIPayload<APIAllBlacklist>;
+export type RESTGetAPIBlacklistsResponse = APIPayload<APIBlacklists>;

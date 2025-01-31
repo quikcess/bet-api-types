@@ -1,5 +1,6 @@
 import type {
 	APIGuildUser,
+	APIGuildUserContextStats,
 	APIGuildUsers,
 	APIPayload,
 	APIUser,
@@ -64,4 +65,5 @@ export type RESTGetAPIUserStatsResponse = APIPayload<APIUserContextStats>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTGetAPIGuildUserStatsResponse = APIPayload<APIUserContextStats>;
+export type RESTGetAPIGuildUserStatsResponse =
+	APIPayload<APIGuildUserContextStats>;

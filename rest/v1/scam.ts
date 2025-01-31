@@ -1,9 +1,9 @@
 import type {
-	APIAllScams,
 	APIGuildScamStats,
 	APIPayload,
 	APIScam,
 	APIScamStats,
+	APIScams,
 	ISODateString,
 } from "../../v1";
 
@@ -28,7 +28,7 @@ export interface RESTGetAPIScamPaginationQuery {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
-export interface RESTGetAPIAllScamsQuery extends RESTGetAPIScamPaginationQuery {
+export interface RESTGetAPIScamsQuery extends RESTGetAPIScamPaginationQuery {
 	guild_id?: string;
 }
 
@@ -65,4 +65,4 @@ export type RESTGetAPISimilarScamsResponse = APIPayload<APIScam[]>;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
-export type RESTGetAPIAllScamsResponse = APIPayload<APIAllScams>;
+export type RESTGetAPIScamsResponse = APIPayload<APIScams>;
