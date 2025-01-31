@@ -1,6 +1,9 @@
 import type {
 	APIBetStats,
 	APIBlacklistStats,
+	APIGuildBetStats,
+	APIGuildMediatorStats,
+	APIGuildUserStats,
 	APIMediatorStats,
 	APIScamStats,
 	APIUserStats,
@@ -99,6 +102,17 @@ export interface APIGuilds {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuildStats {
+	bets: APIGuildBetStats;
+	users: APIGuildUserStats;
+	mediators: APIGuildMediatorStats;
+	scams: APIScamStats;
+	blacklist: APIBlacklistStats;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
+ */
+export interface APIGuildsStats {
 	bets: APIBetStats;
 	users: APIUserStats;
 	mediators: APIMediatorStats;
