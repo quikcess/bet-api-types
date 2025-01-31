@@ -60,3 +60,10 @@ export interface APIScamStats {
 	cheating: number;
 	recently_added: number; // In the last 24 hours
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
+ */
+export interface APIGuildScamStats extends APIScamStats {
+	guild_id: string;
+}

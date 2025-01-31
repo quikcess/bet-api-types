@@ -1,5 +1,6 @@
 import type {
 	APIAllScams,
+	APIGuildScamStats,
 	APIPayload,
 	APIScam,
 	APIScamStats,
@@ -50,6 +51,11 @@ export type RESTGetAPIScamResponse = APIPayload<APIScam>;
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
 export type RESTGetAPIScamStatsResponse = APIPayload<APIScamStats>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
+ */
+export type RESTGetAPIGuildScamStatsResponse = APIPayload<APIGuildScamStats>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams

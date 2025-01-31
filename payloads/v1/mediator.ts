@@ -21,9 +21,9 @@ export interface APIGuildMediatorSignature {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export interface APIGuildMediatorPix {
-	key: string;
-	name: string;
-	message: string;
+	key: string | null;
+	name: string | null;
+	message: string | null;
 }
 
 /**

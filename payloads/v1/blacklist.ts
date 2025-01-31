@@ -57,3 +57,10 @@ export interface APIBlacklistStats {
 	imei: number;
 	recently_added: number; // In the last 24 hours
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
+ */
+export interface APIGuildBlacklistStats extends APIBlacklistStats {
+	guild_id: string;
+}

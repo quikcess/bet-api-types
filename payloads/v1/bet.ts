@@ -162,12 +162,12 @@ export interface APIGuildBetStats {
  */
 export interface APIBetStats extends Omit<APIGuildBetStats, "guild_id"> {
 	total_guilds: number;
-	top_guild_stats: APITopGuildStats;
+	top_guild_stats: APITopGuildBetStats;
 }
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export interface APITopGuildStats extends APIBetBilled {
+export interface APITopGuildBetStats extends APIBetBilled {
 	guild_id: string | null;
 }
