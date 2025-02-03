@@ -9,9 +9,9 @@ import type { ISODateString } from "../../v1";
  */
 export enum AutoMessageType {
 	Default = 1,
-	Bets_Created = 2,
-	Bets_Started = 3,
-	Bets_Playing = 4,
+	BetsCreated = 2,
+	BetsStarted = 3,
+	BetsPlaying = 4,
 }
 
 /**

@@ -2,11 +2,11 @@ import type {
 	APIBetStats,
 	APIBlacklistStats,
 	APIGuildBetStats,
-	APIGuildMediatorStats,
-	APIGuildUserStats,
-	APIMediatorStats,
+	APIGuildMediatorContextStats,
+	APIGuildUserContextStats,
+	APIMediatorContextStats,
 	APIScamStats,
-	APIUserStats,
+	APIUserContextStats,
 	ISODateString,
 } from "../../v1";
 
@@ -71,7 +71,7 @@ export interface APIGuildChannels {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuildPermission {
-	id: string;
+	id: number;
 	role_ids: string[];
 }
 
@@ -103,8 +103,8 @@ export interface APIGuilds {
  */
 export interface APIGuildStats {
 	bets: APIGuildBetStats;
-	users: APIGuildUserStats;
-	mediators: APIGuildMediatorStats;
+	users: APIGuildUserContextStats;
+	mediators: APIGuildMediatorContextStats;
 	scams: APIScamStats;
 	blacklist: APIBlacklistStats;
 }
@@ -114,8 +114,8 @@ export interface APIGuildStats {
  */
 export interface APIGuildsStats {
 	bets: APIBetStats;
-	users: APIUserStats;
-	mediators: APIMediatorStats;
+	users: APIUserContextStats;
+	mediators: APIMediatorContextStats;
 	scams: APIScamStats;
 	blacklist: APIBlacklistStats;
 }
