@@ -19,6 +19,27 @@ export type RESTGetAPIGuildMediatorBaseQuery = {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
+export type RESTGetAPIMediatorQuery = {
+	upsert?: boolean;
+};
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export type RESTGetAPIGuildMediatorQuery = {
+	upsert?: boolean;
+};
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export type RESTPatchAPIGuildMediatorUpdateQuery = {
+	upsert?: boolean;
+};
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
 export interface RESTGetAPIGuildMediatorsPaginationQuery {
 	page?: number;
 	limit?: number;

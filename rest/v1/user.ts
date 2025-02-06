@@ -19,6 +19,27 @@ export type RESTGetAPIGuildUserBaseQuery = {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
+export type RESTGetAPIUserQuery = {
+	upsert?: boolean;
+};
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
+export type RESTGetAPIGuildUserQuery = {
+	upsert?: boolean;
+};
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
+export type RESTPatchAPIGuildUserUpdateQuery = {
+	upsert?: boolean;
+};
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
+ */
 export interface RESTGetAPIGuildUsersPaginationQuery {
 	page?: number;
 	limit?: number;
