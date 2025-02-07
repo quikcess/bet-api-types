@@ -8,62 +8,45 @@ import type {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/events
  */
-export interface APIGuildEvent {
-	guild_id: string;
-	author_id: string;
-	name: string;
-
-	settings: {
-		platforms: BetPlatform[];
-		formats: APIBetFormat[];
-		modes: BetMode[];
-	};
-
-	rules: {
-		values: (string | number)[];
-		min_value: number | null;
-		min_wins: number;
-		allow: {
-			wo: boolean;
-			revenge: boolean;
-			only_consecutives: boolean;
-		};
-	};
-
-	time: {
-		start: ISODateString | null;
-		end: ISODateString | null;
-	};
-
-	created_at: ISODateString;
-	updated_at: ISODateString;
-}
-
-export interface APIGuildEvent2 {
-	guild_id: string;
-	author_id: string;
-	name: string;
-
+export interface APIGuildEventSettings {
 	platforms: BetPlatform[];
 	formats: APIBetFormat[];
 	modes: BetMode[];
+}
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/events
+ */
+export interface APIGuildEventRules {
+	values: (string | number)[];
 	min_value: number | null;
-	allowed_values: (string | number)[];
-	require: {
-		min_wins: number;
-		consecutive: boolean;
-	};
+	min_wins: number;
 	allow: {
-		walkover: boolean;
+		wo: boolean;
 		revenge: boolean;
+		only_consecutives: boolean;
 	};
+}
 
-	time: {
-		start: ISODateString | null;
-		end: ISODateString | null;
-	};
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/events
+ */
+export interface APIGuildEventTime {
+	start: ISODateString | null;
+	end: ISODateString | null;
+	tolerance_ms: number;
+}
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/events
+ */
+export interface APIGuildEvent {
+	guild_id: string;
+	author_id: string;
+	event_name: string;
+	settings: APIGuildEventSettings;
+	rules: APIGuildEventRules;
+	time: APIGuildEventTime;
 	created_at: ISODateString;
 	updated_at: ISODateString;
 }
