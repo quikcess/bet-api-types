@@ -54,7 +54,7 @@ export interface APIGuildLogs {
  */
 export interface APIGuildQueueRules {
 	queue_name: string;
-	channel_ids: string[];
+	channel_id: string | null;
 }
 
 /**
@@ -63,6 +63,7 @@ export interface APIGuildQueueRules {
 export interface APIGuildChannels {
 	parent_thread_ids: string[];
 	blacklist_id: string | null;
+	scam_id: string | null;
 	command_ids: string[];
 	queue_rules: APIGuildQueueRules[];
 }
