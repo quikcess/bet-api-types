@@ -79,10 +79,36 @@ export interface APIGuildPermission {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
+export interface APIGuildBetTax {
+	rate: number;
+	min_value: number;
+	max_value: number;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
+ */
+export interface APIGuildBetSettings {
+	queue_rules: APIGuildQueueRules[];
+	taxes: APIGuildBetTax[];
+	room_price: number;
+	threshold: number;
+	started_time: number;
+}
+
+export interface APIGuildSettings {
+	bet: APIGuildBetSettings;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
+ */
 export interface APIGuild {
 	guild_id: string;
+	prefix: string;
 	permissions: APIGuildPermission[];
 	systems: number[];
+	settings: APIGuildSettings;
 	channels: APIGuildChannels;
 	logs: APIGuildLogs;
 	created_at: ISODateString;
