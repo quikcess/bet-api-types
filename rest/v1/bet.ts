@@ -4,6 +4,7 @@ import type {
 	APIGuildBetStats,
 	APIGuildBets,
 	APIPayload,
+	BetStatus,
 	ISODateString,
 } from "../../v1";
 
@@ -31,7 +32,15 @@ export interface RESTGetAPIGuildBetsPaginationQuery {
 export interface RESTGetAPIGuildBetsQuery
 	extends RESTGetAPIGuildBetsPaginationQuery {
 	player_ids?: string[];
+	status?: BetStatus[];
 }
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
+ */
+export type RESTGetAPIGuildBetCountQuery = {
+	mediator_id?: string;
+};
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets

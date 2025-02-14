@@ -37,8 +37,8 @@ export enum BetStatus {
 	Revenged = 5,
 	Cancelled = 6,
 	Abandoned = 7,
+	AutoClosed = 8,
 }
-
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
