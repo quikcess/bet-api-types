@@ -52,20 +52,10 @@ export interface APIGuildLogs {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
-export interface APIGuildQueueRules {
-	queue_name: string;
-	channel_id: string | null;
-}
-
-/**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
- */
 export interface APIGuildChannels {
-	parent_thread_ids: string[];
 	blacklist_id: string | null;
 	scam_id: string | null;
 	command_ids: string[];
-	queue_rules: APIGuildQueueRules[];
 }
 
 /**
@@ -80,9 +70,17 @@ export interface APIGuildPermission {
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
 export interface APIGuildBetTax {
-	rate: number;
+	percentage: number;
 	min_value: number;
 	max_value: number;
+}
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
+ */
+export interface APIGuildQueueRules {
+	format: string;
+	channel_id: string | null;
 }
 
 /**
@@ -91,11 +89,15 @@ export interface APIGuildBetTax {
 export interface APIGuildBetSettings {
 	queue_rules: APIGuildQueueRules[];
 	taxes: APIGuildBetTax[];
+	parent_channel_id: string | null;
 	room_price: number;
 	threshold: number;
-	started_time: number;
+	start_time: number;
 }
 
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
+ */
 export interface APIGuildSettings {
 	bet: APIGuildBetSettings;
 }
