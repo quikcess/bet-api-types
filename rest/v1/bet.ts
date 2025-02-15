@@ -5,6 +5,7 @@ import type {
 	APIGuildBets,
 	APIPayload,
 	BetStatus,
+	DeepPartial,
 	ISODateString,
 } from "../../v1";
 
@@ -57,7 +58,7 @@ export type RESTPostAPIGuildBetCreateBody = APIGuildBet;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets
  */
-export type RESTPatchAPIGuildBetUpdateBody = Partial<APIGuildBet>;
+export type RESTPatchAPIGuildBetUpdateBody = DeepPartial<APIGuildBet>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/bets

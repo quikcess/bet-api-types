@@ -6,6 +6,7 @@ import type {
 	APIMediatorContextStats,
 	APIMediators,
 	APIPayload,
+	DeepPartial,
 	ISODateString,
 } from "../../v1";
 
@@ -56,12 +57,24 @@ export type RESTPostAPIGuildMediatorCreateBody = APIGuildMediator;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
-export type RESTPatchAPIGuildMediatorUpdateBody = Partial<APIGuildMediator>;
+export type RESTPatchAPIGuildMediatorUpdateBody = DeepPartial<APIGuildMediator>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
  */
 export type RESTGetAPIGuildMediatorResponse = APIPayload<APIGuildMediator>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export type RESTGetAPIGuildLeastLoadedMediatorResponse = APIPayload<
+	APIGuildMediator | undefined
+>;
+
+/**
+ * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators
+ */
+export type RESTGetAPIGuildLeastLoadedMediatorBody = APIGuildMediator;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mediators

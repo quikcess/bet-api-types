@@ -1,5 +1,5 @@
 import type { APIGuildQueue, APIGuildQueues } from "../../payloads/v1/queue";
-import type { APIPayload, ISODateString } from "../../v1";
+import type { APIPayload, DeepPartial, ISODateString } from "../../v1";
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/queues
@@ -15,7 +15,7 @@ export interface RESTGetAPIGuildQueuesPaginationQuery {
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/queues
  */
-export type RESTPatchAPIGuildQueueUpdateBody = Partial<APIGuildQueue>;
+export type RESTPatchAPIGuildQueueUpdateBody = DeepPartial<APIGuildQueue>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/queues

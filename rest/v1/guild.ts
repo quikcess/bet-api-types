@@ -4,6 +4,7 @@ import type {
 	APIGuilds,
 	APIGuildsStats,
 	APIPayload,
+	DeepPartial,
 	ISODateString,
 } from "../../v1";
 
@@ -26,7 +27,7 @@ export type RESTPostAPIGuildCreateBody = APIGuild;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds
  */
-export type RESTPatchAPIGuildUpdateBody = Partial<APIGuild>;
+export type RESTPatchAPIGuildUpdateBody = DeepPartial<APIGuild>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/guilds

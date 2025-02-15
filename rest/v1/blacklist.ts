@@ -4,6 +4,7 @@ import type {
 	APIBlacklists,
 	APIGuildBlacklistStats,
 	APIPayload,
+	DeepPartial,
 	ISODateString,
 } from "../../v1";
 
@@ -41,7 +42,7 @@ export type RESTPostAPIBlacklistCreateBody = APIBlacklist;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist
  */
-export type RESTPatchAPIBlacklistUpdateBody = Partial<APIBlacklist>;
+export type RESTPatchAPIBlacklistUpdateBody = DeepPartial<APIBlacklist>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/blacklist

@@ -2,6 +2,7 @@ import type {
 	APIGuildMod,
 	APIGuildMods,
 	APIPayload,
+	DeepPartial,
 	GuildModType,
 	ISODateString,
 } from "../../v1";
@@ -33,7 +34,7 @@ export type RESTPostAPIGuildModCreateBody = APIGuildMod;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mods
  */
-export type RESTPatchAPIGuildModUpdateBody = Partial<APIGuildMod>;
+export type RESTPatchAPIGuildModUpdateBody = DeepPartial<APIGuildMod>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/mods

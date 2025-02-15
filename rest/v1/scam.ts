@@ -4,6 +4,7 @@ import type {
 	APIScam,
 	APIScamStats,
 	APIScams,
+	DeepPartial,
 	ISODateString,
 } from "../../v1";
 
@@ -40,7 +41,7 @@ export type RESTPostAPIScamCreateBody = APIScam;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams
  */
-export type RESTPatchAPIScamUpdateBody = Partial<APIScam>;
+export type RESTPatchAPIScamUpdateBody = DeepPartial<APIScam>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/scams

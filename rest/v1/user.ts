@@ -6,6 +6,7 @@ import type {
 	APIUser,
 	APIUserContextStats,
 	APIUsers,
+	DeepPartial,
 	ISODateString,
 } from "../../v1";
 
@@ -56,7 +57,7 @@ export type RESTPostAPIGuildUserCreateBody = APIGuildUser;
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
  */
-export type RESTPatchAPIGuildUserUpdateBody = Partial<APIGuildUser>;
+export type RESTPatchAPIGuildUserUpdateBody = DeepPartial<APIGuildUser>;
 
 /**
  * @see https://docs.quikcess.com/bet/api-reference/endpoint/users
