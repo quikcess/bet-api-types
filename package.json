@@ -1,9 +1,9 @@
 {
-	"name": "@quikcess/bet-api-types",
-	"version": "0.0.8",
+	"name": "@quikcess/platform-api-types",
+	"version": "0.0.1",
 	"private": false,
-	"description": "Typings for Quikcess Bet API",
-	"homepage": "https://github.com/quikcess/bet-api-types#readme",
+	"description": "Typings for Quikcess Platform API",
+	"homepage": "https://github.com/quikcess/platform-api-types#readme",
 	"exports": {
 		"./v*": {
 			"types": "./v*.d.ts",
@@ -54,9 +54,6 @@
 	"author": "Eydrenn Araujo",
 	"bugs": {
 		"url": "https://github.com/quikcess/bet-api-types/issues"
-	},
-	"dependencies": {
-		"discord-api-types": "^0.37.117"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",

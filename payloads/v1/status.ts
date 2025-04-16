@@ -1,5 +1,5 @@
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
+ * @see https://docs.quikcess.com/platform/api-reference/endpoint/status
  */
 export type APIStatusType = "healthy" | "degraded" | "unknown";
 export const APIStatusType = {
@@ -9,7 +9,7 @@ export const APIStatusType = {
 };
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
+ * @see https://docs.quikcess.com/platform/api-reference/endpoint/status
  */
 export type APIServicesType = "up" | "down" | "unknown";
 export const APIServicesType = {
@@ -19,7 +19,7 @@ export const APIServicesType = {
 } as const;
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
+ * @see https://docs.quikcess.com/platform/api-reference/endpoint/status
  */
 export interface APIStatusServices {
 	database: {
@@ -33,7 +33,7 @@ export interface APIStatusServices {
 }
 
 /**
- * @see https://docs.quikcess.com/bet/api-reference/endpoint/status
+ * @see https://docs.quikcess.com/platform/api-reference/endpoint/status
  */
 export interface APIStatus {
 	status: APIStatusType;
